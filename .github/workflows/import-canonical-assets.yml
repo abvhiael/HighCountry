@@ -1,0 +1,77 @@
+name: Import canonical HighCountry asset bytes
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/import-canonical-assets.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout independent HighCountry repository
+        uses: actions/checkout@v4
+        with:
+          path: destination
+          persist-credentials: true
+      - name: Checkout immutable integrated source
+        uses: actions/checkout@v4
+        with:
+          repository: abvhiael/420-integrated-v0.1
+          ref: 78a4befa01bd08693aabfd576a6fe8fba2e2677b
+          path: source
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            apps/highcountry-web/public
+            assets/highcountry
+            deployments/highcountry
+            tools/tiled
+          sparse-checkout-cone-mode: true
+      - name: Copy exact bytes and generate source/destination SHA-256 manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, pathlib, shutil
+          s=pathlib.Path('source'); d=pathlib.Path('destination')
+          roots=['apps/highcountry-web/public','assets/highcountry','deployments/highcountry','tools/tiled']
+          extensions={'.png','.jpg','.jpeg','.webp','.gif','.svg','.avif','.bmp','.tif','.tiff','.ico','.ase','.aseprite','.psd','.kra','.xcf','.tsx','.tmx','.tmj','.tsj','.glb','.gltf','.fbx','.obj','.mtl','.wav','.ogg','.mp3','.flac','.mp4','.webm','.woff','.woff2','.ttf','.otf'}
+          manifest=[]
+          for root in roots:
+              base=s/root
+              if not base.exists(): continue
+              for f in sorted(base.rglob('*')):
+                  if not f.is_file() or f.suffix.lower() not in extensions: continue
+                  rel=f.relative_to(s)
+                  output=d/rel
+                  if output.exists() and output.read_bytes()!=f.read_bytes():
+                      raise SystemExit('Refusing to replace modified destination asset '+str(rel))
+                  output.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(f,output)
+                  sh=hashlib.sha256(f.read_bytes()).hexdigest()
+                  if hashlib.sha256(output.read_bytes()).hexdigest()!=sh:
+                      raise SystemExit('CHECKSUM MISMATCH: '+str(rel))
+                  manifest.append({'path':rel.as_posix(),'sha256':sh,'size':f.stat().st_size,'sourceCommit':'78a4befa01bd08693aabfd576a6fe8fba2e2677b'})
+          if not manifest: raise SystemExit('NO ASSET BYTES FOUND - FAIL CLOSED')
+          target=d/'docs/highcountry/separation/CANONICAL-ASSET-BYTE-TRANSFER.json'
+          target.parent.mkdir(parents=True,exist_ok=True)
+          target.write_text(json.dumps({'sourceRepository':'abvhiael/420-integrated-v0.1','frozenCommit':'78a4befa01bd08693aabfd576a6fe8fba2e2677b','assetCount':len(manifest),'files':manifest},indent=2)+'\n')
+          print('TRANSFER_CHECKSUM_PASS',len(manifest))
+          PY
+      - name: Commit exact copy to destination only
+        working-directory: destination
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- apps/highcountry-web/public assets/highcountry deployments/highcountry tools/tiled docs/highcountry/separation/CANONICAL-ASSET-BYTE-TRANSFER.json
+          if git diff --cached --quiet; then
+            echo 'No asset changes; destination already matches.'
+          else
+            git commit -m 'assets(highcountry): preserve canonical frozen-source bytes'
+            git push origin HEAD:main
+          fi
