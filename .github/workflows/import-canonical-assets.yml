@@ -68,7 +68,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- apps/highcountry-web/public assets/highcountry deployments/highcountry tools/tiled docs/highcountry/separation/CANONICAL-ASSET-BYTE-TRANSFER.json
+          git add -A -- apps/highcountry-web/public assets/highcountry tools/tiled docs/highcountry/separation/CANONICAL-ASSET-BYTE-TRANSFER.json
           if git diff --cached --quiet; then
             echo 'No asset changes; destination already matches.'
           else
