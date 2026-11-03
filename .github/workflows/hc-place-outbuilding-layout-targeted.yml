@@ -1,0 +1,21 @@
+name: HC outbuilding layout targeted Level 1
+on:
+  push:
+    branches:
+      - reconcile/pr-929-outbuilding-layout
+    paths:
+      - 'services/highcountry-economy/src/heritage-tool-shed-placement.js'
+      - 'services/highcountry-economy/test/heritage-tool-shed-placement.test.mjs'
+      - '.github/workflows/hc-place-outbuilding-layout-targeted.yml'
+permissions:
+  contents: read
+jobs:
+  outbuilding-layout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check services/highcountry-economy/src/heritage-tool-shed-placement.js
+      - run: node --test services/highcountry-economy/test/heritage-tool-shed-placement.test.mjs
