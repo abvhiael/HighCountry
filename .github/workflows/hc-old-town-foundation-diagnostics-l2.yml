@@ -1,0 +1,30 @@
+name: HighCountry Old Town canonical PNG foundation diagnostics L2
+on:
+  push:
+    branches: [qualification/highcountry-production-readiness]
+    paths:
+      - '.github/workflows/hc-old-town-foundation-diagnostics-l2.yml'
+      - 'scripts/qualification/old-town-foundation-audit.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canonical-foundation-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install diagnostics-only Pillow
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Verify actual original PNG SHA-256, dimensions, visible bounds and anchor policy
+        run: python scripts/qualification/old-town-foundation-audit.py
+      - name: Preserve visual diagnostics, source measurements and blocked readiness evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: hc-old-town-20-sprite-foundation-evidence
+          path: artifacts/qualification/old-town/
+          retention-days: 14
+          if-no-files-found: error
