@@ -1,0 +1,2027 @@
+{
+  "schema": "HC.RECONCILIATION.CONSOLIDATION.INVENTORY.V1",
+  "verifiedMainSha": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+  "branchCount": 28,
+  "changedPathOccurrences": 176,
+  "uniqueChangedPaths": 126,
+  "overlappingPaths": 42,
+  "overlapBlobConflicts": 0,
+  "branches": [
+    {
+      "branch": "reconcile/pr-845-entertainment",
+      "head": "05c147e6211fdd2409c0cc5a6038cd755cbed7d8",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 4,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/entertainment-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/entertainment-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-845.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-849-wall-posters",
+      "head": "afa730965f1faec045b47ff2460a45dfd3de44cf",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/poster-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/poster-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-849.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-851-signs-plaques",
+      "head": "ea38c8c7a61c1a73814919e5b73d5e4db61b34b4",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/signs-plaques-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/signs-plaques-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-851.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-852-framed-art",
+      "head": "487684357ef74579c6ddf4595600d66abf436219",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/framed-art-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/framed-art-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-852.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-853-mounted-decor",
+      "head": "fc03dfc6591a0042a1556d4f61ffc077eaa5d868",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/mounted-decor-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/mounted-decor-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-853.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-855-small-decor",
+      "head": "da3451e880b58941ad68f2b998c53b75586c2b79",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/small-decor-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/small-decor-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-855.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-856-regional-memorabilia",
+      "head": "4ce20ca0c77a0cedb795d7ca75f9fdd9a0893b79",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/regional-memorabilia-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/regional-memorabilia-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-856.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-859-outdoor-structures",
+      "head": "553c6636ee682202433a4fd1b642c0167d41b105",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/outdoor-structure-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/outdoor-structure-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-859.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-872-fire-gathering",
+      "head": "1e629268d1080b8940f96a9a5976a949281f5c70",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/fire-gathering-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/fire-gathering-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-872.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-877-garden-ornaments",
+      "head": "52a4035a490123fd19cd438028090c451169f633",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/garden-ornament-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/garden-ornament-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-877.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-878-physical-survey",
+      "head": "40c4390cde9844751406edd88e5ef000964bc9f7",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 7,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-878.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-879-paths-landscape",
+      "head": "de0cac0b3aa65f1939d406ee5e59652a59308379",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/landscape-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/landscape-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-879.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-881-recreation-relaxation",
+      "head": "4fea539cb8d40fdb804e1f218997024e1cb7179e",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/recreation-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/recreation-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-881.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-885-survey-custody",
+      "head": "c821615a682d4348c0b079d7539a9e2a9fca9c4f",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 11,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-02-SURVEY-SOURCE-CUSTODY.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-878.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-885.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-survey-custody.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-survey-custody.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-890-building-economy",
+      "head": "d78a58216b1b617c4a43da3407dc50c492cf9e11",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 2,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-ART-05-BUILDING-ECONOMY-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-890.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-891-port-alder-map-stage",
+      "head": "25170ba971e041f202becf00bfaef087b0a5477d",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 12,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/port-alder-map-stage.js",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-map-catalogue.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-port-alder-artwork-hitboxes.v2.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-PORT-ALDER-MAP-CATALOGUE-STAGE.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-891.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/server.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/src/app.js",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/src/port-alder-navigation.js",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-port-alder-map-stage.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-port-alder-milestone-authority.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/port-alder-purchase-milestone.js",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-893-workshop-abilities",
+      "head": "3680a19162cb1fc50bf2f663be406f769b3d2486",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 4,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-ART-05-B-WORKSHOP-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-ART-05-BUILDING-ECONOMY-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-890.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-893.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-895-old-town-abilities-landmarks",
+      "head": "09999a7e8613a5d19dd9090e55d42eafe9593f24",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 4,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-building-abilities.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-permanent-landmarks.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-06-PA-OLDTOWN-V1-ABILITY-AND-LANDMARK-LOCK.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-895.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-896-old-town-landmarks",
+      "head": "dd8f316bd80fc73254aa34938669713170d58496",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 12,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/old-town-landmarks.js",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-building-abilities.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-landmark-hitboxes.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-permanent-landmarks.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-06-PA-OLDTOWN-V1-ABILITY-AND-LANDMARK-LOCK.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-PA-OLDTOWN-LANDMARK-INTERACTIONS-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-895.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-896.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-896-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-896-source-snapshots/apps/highcountry-web/server.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-896-source-snapshots/apps/highcountry-web/src/app.js",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-pa-oldtown-landmarks.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-900-agricultural-buildings",
+      "head": "c3c26c0cd0ae3795895cd36b3c4301a90da2b77f",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 4,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/agricultural-building-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/agricultural-building-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-ART-05-D-52-BUILDING-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-900.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-909-old-town-screen-roadmap",
+      "head": "6f66e7bd2ec4458e670f1cf84a866d04e3b1d2fb",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-WORLD-LOCKED-MASTER-ROADMAP-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-OLD-TOWN-NEIGHBOURHOOD-SCREEN-ROADMAP-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-909.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-913-old-town-renderer",
+      "head": "9d73610718c9298db50f4e88dbedfbab1faa61ae",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 15,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/package.json",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/old-town-scene.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/port-alder-navigation.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/old-town-scene.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-genesis-assets.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-geo-authority-status.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-provisional-geometry.geojson",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-render-anchors.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-site-registry.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-LOCKED-MASTER-ROADMAP-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-OLD-TOWN-NEIGHBOURHOOD-SCREEN-ROADMAP-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-909.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-913.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-913-source-snapshots/.github/workflows/highcountry-ot-screen-01-l2.yml",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-913-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-917-red-mesa-heritage-review",
+      "head": "9087be3bf713be3910289ca8a4fb834b9c115866",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 5,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": ".github/workflows/hc-art-05-f-red-mesa-review-targeted.yml",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/red-mesa-heritage-review-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/red-mesa-heritage-review-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-917.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-917-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-928-canonical-rectangles",
+      "head": "45cd0a05d93c7c326a6344629f7397921ea41c88",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 18,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": ".github/workflows/hc-place-04-reconciliation-targeted.yml",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/fire-gathering-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/garden-ornament-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/landscape-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/outdoor-structure-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/premium-furniture-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/recreation-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/red-mesa-leisure-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/water-wildlife-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-PLACE-04-RECTANGLE-QUALIFICATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-928.md",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/custody-records.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-canonical-rectangles.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-contract.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-recovery.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-transactions.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/test/placement-canonical-rectangles.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-929-outbuilding-layout",
+      "head": "58aebdf4b34e4fc3d9c61bfccb2d96f2bbbd8ff0",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 22,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": ".github/workflows/hc-place-04-reconciliation-targeted.yml",
+          "status": "added"
+        },
+        {
+          "path": ".github/workflows/hc-place-outbuilding-layout-targeted.yml",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/fire-gathering-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/garden-ornament-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/landscape-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/outdoor-structure-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/premium-furniture-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/recreation-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/red-mesa-leisure-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/src/water-wildlife-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-PLACE-04-RECTANGLE-QUALIFICATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-928.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-929.md",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/custody-records.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/heritage-tool-shed-placement.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-canonical-rectangles.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-contract.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-recovery.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/placement-transactions.js",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/test/heritage-tool-shed-placement.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/test/placement-canonical-rectangles.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-930-tiled-editor-starter",
+      "head": "36da01225a01d86c45f7aeffcdda70ca989ac9e2",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/reconciliation/PR-930.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/README.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/highcountry-world-template.tmj",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-931-tiled-old-town-review",
+      "head": "2bb132d68d15aedbf0305aded26b422597e278cc",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 6,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/reconciliation/PR-930.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-931.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/README.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/highcountry-world-template.tmj",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/old-town/README.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/old-town/port-alder-old-town-review.tmj",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-932-tiled-canonical-preview",
+      "head": "b88b735de4bb15e939ac89671f55b19600614590",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 12,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": ".github/workflows/hc-old-town-tiled-preview.yml",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-genesis-assets.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/old-town-site-registry.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-930.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-931.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-932.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/README.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/highcountry-world-template.tmj",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/old-town/CANONICAL-PNG-PREVIEW.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/old-town/README.md",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/old-town/build-canonical-preview.mjs",
+          "status": "added"
+        },
+        {
+          "path": "tools/tiled/old-town/port-alder-old-town-review.tmj",
+          "status": "added"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/hc-art-05-f-red-mesa-review-targeted.yml",
+      "branches": [
+        "reconcile/pr-917-red-mesa-heritage-review"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": ".github/workflows/hc-old-town-tiled-preview.yml",
+      "branches": [
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": ".github/workflows/hc-place-04-reconciliation-targeted.yml",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "41aa780d2ebf53c900e2c3f33cad35c9eed7d0cc"
+    },
+    {
+      "path": ".github/workflows/hc-place-outbuilding-layout-targeted.yml",
+      "branches": [
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/package.json",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/agricultural-building-catalogue.js",
+      "branches": [
+        "reconcile/pr-900-agricultural-buildings"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/entertainment-catalogue.js",
+      "branches": [
+        "reconcile/pr-845-entertainment"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/fire-gathering-catalogue.js",
+      "branches": [
+        "reconcile/pr-872-fire-gathering",
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "21ae9854c6d6017943523846698469c470358a0e"
+    },
+    {
+      "path": "apps/highcountry-web/src/framed-art-catalogue.js",
+      "branches": [
+        "reconcile/pr-852-framed-art"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/garden-ornament-catalogue.js",
+      "branches": [
+        "reconcile/pr-877-garden-ornaments",
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "75e1974e8f502c3ad73cc9c2495a436add1469d6"
+    },
+    {
+      "path": "apps/highcountry-web/src/landscape-catalogue.js",
+      "branches": [
+        "reconcile/pr-879-paths-landscape",
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "7d7a417415fb75ad64989861ced6aacdff7f8473"
+    },
+    {
+      "path": "apps/highcountry-web/src/mounted-decor-catalogue.js",
+      "branches": [
+        "reconcile/pr-853-mounted-decor"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/old-town-landmarks.js",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/old-town-scene.js",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/outdoor-structure-catalogue.js",
+      "branches": [
+        "reconcile/pr-859-outdoor-structures",
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "fc87334bccd2fc627a230ffa5af0b36eb31861ba"
+    },
+    {
+      "path": "apps/highcountry-web/src/port-alder-map-stage.js",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/port-alder-navigation.js",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/poster-catalogue.js",
+      "branches": [
+        "reconcile/pr-849-wall-posters"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/premium-furniture-catalogue.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "84ee94285913cdcc14b3a13269eb57417b213506"
+    },
+    {
+      "path": "apps/highcountry-web/src/recreation-catalogue.js",
+      "branches": [
+        "reconcile/pr-881-recreation-relaxation",
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "c09b3a25f8974a89adc4af0148f4d3be3e70b324"
+    },
+    {
+      "path": "apps/highcountry-web/src/red-mesa-heritage-review-catalogue.js",
+      "branches": [
+        "reconcile/pr-917-red-mesa-heritage-review"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/red-mesa-leisure-catalogue.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "e9b98da11ab4f3b70e6e129a267c5af5cb3ce17f"
+    },
+    {
+      "path": "apps/highcountry-web/src/regional-memorabilia-catalogue.js",
+      "branches": [
+        "reconcile/pr-856-regional-memorabilia"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/signs-plaques-catalogue.js",
+      "branches": [
+        "reconcile/pr-851-signs-plaques"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/small-decor-catalogue.js",
+      "branches": [
+        "reconcile/pr-855-small-decor"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/src/water-wildlife-catalogue.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "1cd00bded939e4231848eb2314b598407447d195"
+    },
+    {
+      "path": "apps/highcountry-web/test/agricultural-building-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-900-agricultural-buildings"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/entertainment-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-845-entertainment"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/fire-gathering-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-872-fire-gathering"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/framed-art-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-852-framed-art"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/garden-ornament-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-877-garden-ornaments"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/landscape-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-879-paths-landscape"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/mounted-decor-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-853-mounted-decor"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/old-town-scene.test.mjs",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/outdoor-structure-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-859-outdoor-structures"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/poster-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-849-wall-posters"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/recreation-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-881-recreation-relaxation"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/red-mesa-heritage-review-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-917-red-mesa-heritage-review"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "596dacc9bfe66c5fd5ac77cdacdfdcd25ef65b9c"
+    },
+    {
+      "path": "apps/highcountry-web/test/regional-memorabilia-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-856-regional-memorabilia"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/signs-plaques-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-851-signs-plaques"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "apps/highcountry-web/test/small-decor-catalogue.test.mjs",
+      "branches": [
+        "reconcile/pr-855-small-decor"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/hc-world-map-catalogue.v1.json",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/hc-world-pa-oldtown-building-abilities.v1.json",
+      "branches": [
+        "reconcile/pr-895-old-town-abilities-landmarks",
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": "942f210438fe9958b94ddd982cb5c0aea3cc9e07"
+    },
+    {
+      "path": "deployments/highcountry/hc-world-pa-oldtown-landmark-hitboxes.v1.json",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/hc-world-pa-oldtown-permanent-landmarks.v1.json",
+      "branches": [
+        "reconcile/pr-895-old-town-abilities-landmarks",
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": "5532fe05d1f5c9ce227b4d725b9e16903d31cfd0"
+    },
+    {
+      "path": "deployments/highcountry/hc-world-port-alder-artwork-hitboxes.v2.json",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/old-town-genesis-assets.json",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "b6904cc9e60fe3a134af7f25e1f7555576b85201"
+    },
+    {
+      "path": "deployments/highcountry/old-town-geo-authority-status.json",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/old-town-provisional-geometry.geojson",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/old-town-render-anchors.v1.json",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "deployments/highcountry/old-town-site-registry.json",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "5ba800f1220e459971e13a16fce198610c632b68"
+    },
+    {
+      "path": "docs/highcountry/HC-ART-05-B-WORKSHOP-ABILITIES-CONTRACT-V1.md",
+      "branches": [
+        "reconcile/pr-893-workshop-abilities"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/highcountry/HC-ART-05-BUILDING-ECONOMY-ABILITIES-CONTRACT-V1.md",
+      "branches": [
+        "reconcile/pr-890-building-economy",
+        "reconcile/pr-893-workshop-abilities"
+      ],
+      "status": "added",
+      "sharedBlob": "93ae883c2b67f7eec7e934b197576e1c724af182"
+    },
+    {
+      "path": "docs/highcountry/HC-ART-05-D-52-BUILDING-ABILITIES-CONTRACT-V1.md",
+      "branches": [
+        "reconcile/pr-900-agricultural-buildings"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/highcountry/HC-PLACE-04-RECTANGLE-QUALIFICATION.md",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "4198f445558d14d81f57ea3ca139ae8c4060b938"
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "417c1c2a869cee7fe14dabc4e33dfd34a0a9e9d3"
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "42b562ffa2cc4e06c0fa7c8ae61a96b4ac839222"
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-02-SURVEY-SOURCE-CUSTODY.md",
+      "branches": [
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-06-PA-OLDTOWN-V1-ABILITY-AND-LANDMARK-LOCK.md",
+      "branches": [
+        "reconcile/pr-895-old-town-abilities-landmarks",
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": "3a6b141546bbf3193b99ad002a4ed1f404c409b8"
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-LOCKED-MASTER-ROADMAP-V1.md",
+      "branches": [
+        "reconcile/pr-909-old-town-screen-roadmap",
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": "9d7a7ddb36f883572516b4b48d2231a89c319627"
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-OLD-TOWN-NEIGHBOURHOOD-SCREEN-ROADMAP-V1.md",
+      "branches": [
+        "reconcile/pr-909-old-town-screen-roadmap",
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": "046c9a6ae9e3d2b168a69abcab6da8a31951050e"
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-PA-OLDTOWN-LANDMARK-INTERACTIONS-V1.md",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/highcountry/HC-WORLD-PORT-ALDER-MAP-CATALOGUE-STAGE.md",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-845.md",
+      "branches": [
+        "reconcile/pr-845-entertainment"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-849.md",
+      "branches": [
+        "reconcile/pr-849-wall-posters"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-851.md",
+      "branches": [
+        "reconcile/pr-851-signs-plaques"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-852.md",
+      "branches": [
+        "reconcile/pr-852-framed-art"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-853.md",
+      "branches": [
+        "reconcile/pr-853-mounted-decor"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-855.md",
+      "branches": [
+        "reconcile/pr-855-small-decor"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-856.md",
+      "branches": [
+        "reconcile/pr-856-regional-memorabilia"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-859.md",
+      "branches": [
+        "reconcile/pr-859-outdoor-structures"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-872.md",
+      "branches": [
+        "reconcile/pr-872-fire-gathering"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-877.md",
+      "branches": [
+        "reconcile/pr-877-garden-ornaments"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-878.md",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "da676516d3cbf09c636aff28b8b648e3c8d2f17e"
+    },
+    {
+      "path": "docs/reconciliation/PR-879.md",
+      "branches": [
+        "reconcile/pr-879-paths-landscape"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-881.md",
+      "branches": [
+        "reconcile/pr-881-recreation-relaxation"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-885.md",
+      "branches": [
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-890.md",
+      "branches": [
+        "reconcile/pr-890-building-economy",
+        "reconcile/pr-893-workshop-abilities"
+      ],
+      "status": "added",
+      "sharedBlob": "89a3521d52af316486d6067120d0973a1e0f9cdc"
+    },
+    {
+      "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/server.mjs",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/src/app.js",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/src/port-alder-navigation.js",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-891.md",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-893.md",
+      "branches": [
+        "reconcile/pr-893-workshop-abilities"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-895.md",
+      "branches": [
+        "reconcile/pr-895-old-town-abilities-landmarks",
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": "7d52873e76366d8fbae7edbdf9e2f0353689848b"
+    },
+    {
+      "path": "docs/reconciliation/pr-896-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-896-source-snapshots/apps/highcountry-web/server.mjs",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-896-source-snapshots/apps/highcountry-web/src/app.js",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-896.md",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-900.md",
+      "branches": [
+        "reconcile/pr-900-agricultural-buildings"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-909.md",
+      "branches": [
+        "reconcile/pr-909-old-town-screen-roadmap",
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": "f69d472fede11e8ade6421b9913650347e044f7a"
+    },
+    {
+      "path": "docs/reconciliation/pr-913-source-snapshots/.github/workflows/highcountry-ot-screen-01-l2.yml",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-913-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-913.md",
+      "branches": [
+        "reconcile/pr-913-old-town-renderer"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/pr-917-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+      "branches": [
+        "reconcile/pr-917-red-mesa-heritage-review"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-917.md",
+      "branches": [
+        "reconcile/pr-917-red-mesa-heritage-review"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-928.md",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "4142cc38a2ffbb856d3b7dee23674bcceb9db3cf"
+    },
+    {
+      "path": "docs/reconciliation/PR-929.md",
+      "branches": [
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "docs/reconciliation/PR-930.md",
+      "branches": [
+        "reconcile/pr-930-tiled-editor-starter",
+        "reconcile/pr-931-tiled-old-town-review",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "18aab91cab861ecd404192e469d142c0eae8f3e3"
+    },
+    {
+      "path": "docs/reconciliation/PR-931.md",
+      "branches": [
+        "reconcile/pr-931-tiled-old-town-review",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "e045d47ecf372c79cb7230f23a5ddef6b1d01102"
+    },
+    {
+      "path": "docs/reconciliation/PR-932.md",
+      "branches": [
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "scripts/highcountry/hc-world-02-full-survey.mjs",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "a9a3b6040cc6eb51d562c9e0aeb6d0172552fdde"
+    },
+    {
+      "path": "scripts/highcountry/hc-world-02-full-survey.test.mjs",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "6eeb967f80baae82c644c257b86ad64b3fc5f8ff"
+    },
+    {
+      "path": "scripts/highcountry/hc-world-02-parcel-access.mjs",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "58f6e0d3cfd1769147be62698d8293a456c6172d"
+    },
+    {
+      "path": "scripts/highcountry/hc-world-02-parcel-access.test.mjs",
+      "branches": [
+        "reconcile/pr-878-physical-survey",
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": "d18999de1b8dd2f2c2769ec27950674997c4b1fa"
+    },
+    {
+      "path": "scripts/highcountry/hc-world-02-survey-custody.mjs",
+      "branches": [
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "scripts/highcountry/hc-world-02-survey-custody.test.mjs",
+      "branches": [
+        "reconcile/pr-885-survey-custody"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "scripts/highcountry/hc-world-pa-oldtown-landmarks.test.mjs",
+      "branches": [
+        "reconcile/pr-896-old-town-landmarks"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "scripts/highcountry/hc-world-port-alder-map-stage.test.mjs",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "scripts/highcountry/hc-world-port-alder-milestone-authority.test.mjs",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "services/highcountry-economy/src/custody-records.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "18b18fb737874e1cbe01137d14ef16c4ab77fb19"
+    },
+    {
+      "path": "services/highcountry-economy/src/heritage-tool-shed-placement.js",
+      "branches": [
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "services/highcountry-economy/src/placement-canonical-rectangles.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "7f241d93f90de5c14e3480cd4d0dd16a395a0f7a"
+    },
+    {
+      "path": "services/highcountry-economy/src/placement-contract.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "e941147d17d93219d627ffbbc5212b9dd7814e5c"
+    },
+    {
+      "path": "services/highcountry-economy/src/placement-recovery.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "572f31d691963d431a160f94a08625c4fd6d2c4b"
+    },
+    {
+      "path": "services/highcountry-economy/src/placement-transactions.js",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "24d21ef6f88a618d2af9293cab6fcdee67cae824"
+    },
+    {
+      "path": "services/highcountry-economy/src/port-alder-purchase-milestone.js",
+      "branches": [
+        "reconcile/pr-891-port-alder-map-stage"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "services/highcountry-economy/test/heritage-tool-shed-placement.test.mjs",
+      "branches": [
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "services/highcountry-economy/test/placement-canonical-rectangles.test.mjs",
+      "branches": [
+        "reconcile/pr-928-canonical-rectangles",
+        "reconcile/pr-929-outbuilding-layout"
+      ],
+      "status": "added",
+      "sharedBlob": "f46ca0cb9a31fad16330b244d5394ebf273d0431"
+    },
+    {
+      "path": "tools/tiled/highcountry-world-template.tmj",
+      "branches": [
+        "reconcile/pr-930-tiled-editor-starter",
+        "reconcile/pr-931-tiled-old-town-review",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "9bacca1db824c3c4c54d895335d2821c6688a7f5"
+    },
+    {
+      "path": "tools/tiled/old-town/build-canonical-preview.mjs",
+      "branches": [
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "tools/tiled/old-town/CANONICAL-PNG-PREVIEW.md",
+      "branches": [
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": null
+    },
+    {
+      "path": "tools/tiled/old-town/port-alder-old-town-review.tmj",
+      "branches": [
+        "reconcile/pr-931-tiled-old-town-review",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "33f49fc850efb9e162708f12e65c0cd9e7a99c5b"
+    },
+    {
+      "path": "tools/tiled/old-town/README.md",
+      "branches": [
+        "reconcile/pr-931-tiled-old-town-review",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "088aa12860377f2eba231cde5b936aa14e7ca35d"
+    },
+    {
+      "path": "tools/tiled/README.md",
+      "branches": [
+        "reconcile/pr-930-tiled-editor-starter",
+        "reconcile/pr-931-tiled-old-town-review",
+        "reconcile/pr-932-tiled-canonical-preview"
+      ],
+      "status": "added",
+      "sharedBlob": "edecbc1d3e221af6220343102d06c8244ef13849"
+    }
+  ]
+}
