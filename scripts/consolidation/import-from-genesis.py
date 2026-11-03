@@ -24,8 +24,7 @@ def copy_tree(source, target):
     for f in source.rglob("*"):
         if f.is_file(): copy_file(f,target/f.relative_to(source))
 
-if git("rev-parse","HEAD").decode().strip()!=MAIN_SHA:
-    raise RuntimeError("Integration must start at pinned HighCountry main; unexpected HEAD")
+git("merge-base","--is-ancestor",MAIN_SHA,"HEAD")
 if subprocess.check_output(["git","rev-parse","HEAD"],cwd=GENESIS).decode().strip()!=SOURCE_SHA:
     raise RuntimeError("Genesis checkout moved; refuse an unreviewed source import")
 
@@ -152,7 +151,7 @@ server.write_text(s)
 # Add reconciled catalogue modules to original (not stale) Genesis build.
 build=ROOT/"apps/highcountry-web/scripts/build.mjs"
 txt=build.read_text()
-match=re.search(r"for\\(const name of \\[(.*?)\\]\\)await writeFile",txt,re.S)
+match=re.search(r"for\(const name of \[(.*?)\]\)await writeFile",txt,re.S)
 if not match: raise RuntimeError("Genesis build copy manifest missing")
 existing=re.findall(r"'([^']+)'",match.group(1))
 available=[x.name for x in (ROOT/"apps/highcountry-web/src").glob("*.js")]
@@ -186,6 +185,6 @@ metadata={"sourceGenesisMainSha":SOURCE_SHA,"baseHighCountryMainSha":MAIN_SHA,
           "note":"No approved terrain source/keyring or production authenticated milestone endpoint is fabricated."}
 out=ROOT/"docs/integration/FOUNDATION-MIGRATION.json"
 out.parent.mkdir(parents=True,exist_ok=True)
-out.write_text(json.dumps(metadata,indent=2)+"\\n")
+out.write_text(json.dumps(metadata,indent=2)+"\n")
 print("Migrated Genesis pinned sources; imported deduplicated reconciliation files.")
 print("Files requiring manual version review:",len(versions),*[x["path"] for x in versions],sep="\\n")
