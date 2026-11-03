@@ -1,0 +1,21 @@
+name: HighCountry B2 newly integrated relative dependency audit
+on:
+  push:
+    branches:
+      - integration/highcountry-consolidated
+    paths:
+      - scripts/consolidation/module-dependency-audit.test.mjs
+      - .github/workflows/hc-consolidation-dependency-targeted.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  module-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check only missing local modules in the newly combined app/economy/survey/Tiled graph
+        run: node --test scripts/consolidation/module-dependency-audit.test.mjs
