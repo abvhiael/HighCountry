@@ -14,6 +14,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            apps/highcountry-web/public/assets/highcountry/old-town
+            deployments/highcountry
+            scripts/qualification
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
