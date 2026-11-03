@@ -1,0 +1,56 @@
+[
+  {
+    "branch": "reconcile/pr-859-outdoor-structures",
+    "blobs": {
+      "apps/highcountry-web/src/outdoor-structure-catalogue.js": "fc87334bccd2fc627a230ffa5af0b36eb31861ba"
+    }
+  },
+  {
+    "branch": "reconcile/pr-872-fire-gathering",
+    "blobs": {
+      "apps/highcountry-web/src/fire-gathering-catalogue.js": "21ae9854c6d6017943523846698469c470358a0e"
+    }
+  },
+  {
+    "branch": "reconcile/pr-877-garden-ornaments",
+    "blobs": {
+      "apps/highcountry-web/src/garden-ornament-catalogue.js": "75e1974e8f502c3ad73cc9c2495a436add1469d6"
+    }
+  },
+  {
+    "branch": "reconcile/pr-878-physical-survey",
+    "blobs": {
+      "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md": "417c1c2a869cee7fe14dabc4e33dfd34a0a9e9d3",
+      "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md": "42b562ffa2cc4e06c0fa7c8ae61a96b4ac839222",
+      "docs/reconciliation/PR-878.md": "da676516d3cbf09c636aff28b8b648e3c8d2f17e",
+      "scripts/highcountry/hc-world-02-full-survey.mjs": "a9a3b6040cc6eb51d562c9e0aeb6d0172552fdde",
+      "scripts/highcountry/hc-world-02-full-survey.test.mjs": "6eeb967f80baae82c644c257b86ad64b3fc5f8ff",
+      "scripts/highcountry/hc-world-02-parcel-access.mjs": "58f6e0d3cfd1769147be62698d8293a456c6172d",
+      "scripts/highcountry/hc-world-02-parcel-access.test.mjs": "d18999de1b8dd2f2c2769ec27950674997c4b1fa"
+    }
+  },
+  {
+    "branch": "reconcile/pr-879-paths-landscape",
+    "blobs": {
+      "apps/highcountry-web/src/landscape-catalogue.js": "7d7a417415fb75ad64989861ced6aacdff7f8473"
+    }
+  },
+  {
+    "branch": "reconcile/pr-881-recreation-relaxation",
+    "blobs": {
+      "apps/highcountry-web/src/recreation-catalogue.js": "c09b3a25f8974a89adc4af0148f4d3be3e70b324"
+    }
+  },
+  {
+    "branch": "reconcile/pr-885-survey-custody",
+    "blobs": {
+      "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md": "417c1c2a869cee7fe14dabc4e33dfd34a0a9e9d3",
+      "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md": "42b562ffa2cc4e06c0fa7c8ae61a96b4ac839222",
+      "docs/reconciliation/PR-878.md": "da676516d3cbf09c636aff28b8b648e3c8d2f17e",
+      "scripts/highcountry/hc-world-02-full-survey.mjs": "a9a3b6040cc6eb51d562c9e0aeb6d0172552fdde",
+      "scripts/highcountry/hc-world-02-full-survey.test.mjs": "6eeb967f80baae82c644c257b86ad64b3fc5f8ff",
+      "scripts/highcountry/hc-world-02-parcel-access.mjs": "58f6e0d3cfd1769147be62698d8293a456c6172d",
+      "scripts/highcountry/hc-world-02-parcel-access.test.mjs": "d18999de1b8dd2f2c2769ec27950674997c4b1fa"
+    }
+  }
+]
