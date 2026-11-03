@@ -1,0 +1,21 @@
+name: HC-ART-05-F Red Mesa review targeted L1
+on:
+  push:
+    branches:
+      - reconcile/pr-917-red-mesa-heritage-review
+    paths:
+      - 'apps/highcountry-web/src/red-mesa-heritage-review-catalogue.js'
+      - 'apps/highcountry-web/test/red-mesa-heritage-review-catalogue.test.mjs'
+      - '.github/workflows/hc-art-05-f-red-mesa-review-targeted.yml'
+permissions:
+  contents: read
+jobs:
+  affected-catalogue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check apps/highcountry-web/src/red-mesa-heritage-review-catalogue.js
+      - run: node --test apps/highcountry-web/test/red-mesa-heritage-review-catalogue.test.mjs
