@@ -21,10 +21,10 @@ const entrypoints=[
  'tools/tiled/old-town/build-canonical-preview.mjs'
 ];
 const sourcePatterns=[
- /\\bfrom\\s*['"]((?:\\.\\.?\\/)[^'"]+)['"]/g,
- /\\bimport\\s*['"]((?:\\.\\.?\\/)[^'"]+)['"]/g,
- /\\bimport\\s*\\(\\s*['"]((?:\\.\\.?\\/)[^'"]+)['"]\\s*\\)/g,
- /\\brequire\\s*\\(\\s*['"]((?:\\.\\.?\\/)[^'"]+)['"]\\s*\\)/g
+ /\bfrom\s*['"]((?:\.\.?\/)[^'"]+)['"]/g,
+ /\bimport\s*['"]((?:\.\.?\/)[^'"]+)['"]/g,
+ /\bimport\s*\(\s*['"]((?:\.\.?\/)[^'"]+)['"]\s*\)/g,
+ /\brequire\s*\(\s*['"]((?:\.\.?\/)[^'"]+)['"]\s*\)/g
 ];
 const seen=new Set();
 function resolveModule(path){
@@ -43,7 +43,7 @@ function walk(file,missing){
  for(const relative of paths){
   const target=resolveModule(resolve(dirname(file),relative));
   if(!target){missing.push({from:file.slice(repo.length+1),import:relative});continue}
-  if(/\\.(?:m?js|cjs)$/.test(target))walk(target,missing);
+  if(/\.(?:m?js|cjs)$/.test(target))walk(target,missing);
  }
 }
 test('consolidated browser, cadastral, economy and Tiled entrypoints resolve every relative module',()=>{
