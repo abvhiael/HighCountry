@@ -1,0 +1,57 @@
+[
+  {
+    "branch": "reconcile/pr-929-outbuilding-layout",
+    "blobs": {
+      "apps/highcountry-web/src/outdoor-structure-catalogue.js": "fc87334bccd2fc627a230ffa5af0b36eb31861ba",
+      "apps/highcountry-web/src/fire-gathering-catalogue.js": "21ae9854c6d6017943523846698469c470358a0e",
+      "apps/highcountry-web/src/garden-ornament-catalogue.js": "75e1974e8f502c3ad73cc9c2495a436add1469d6",
+      "apps/highcountry-web/src/landscape-catalogue.js": "7d7a417415fb75ad64989861ced6aacdff7f8473",
+      "apps/highcountry-web/src/recreation-catalogue.js": "c09b3a25f8974a89adc4af0148f4d3be3e70b324",
+      ".github/workflows/hc-place-04-reconciliation-targeted.yml": "41aa780d2ebf53c900e2c3f33cad35c9eed7d0cc",
+      "apps/highcountry-web/src/premium-furniture-catalogue.js": "84ee94285913cdcc14b3a13269eb57417b213506",
+      "apps/highcountry-web/src/red-mesa-leisure-catalogue.js": "e9b98da11ab4f3b70e6e129a267c5af5cb3ce17f",
+      "apps/highcountry-web/src/water-wildlife-catalogue.js": "1cd00bded939e4231848eb2314b598407447d195",
+      "apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs": "596dacc9bfe66c5fd5ac77cdacdfdcd25ef65b9c",
+      "docs/highcountry/HC-PLACE-04-RECTANGLE-QUALIFICATION.md": "4198f445558d14d81f57ea3ca139ae8c4060b938",
+      "docs/reconciliation/PR-928.md": "4142cc38a2ffbb856d3b7dee23674bcceb9db3cf",
+      "services/highcountry-economy/src/custody-records.js": "18b18fb737874e1cbe01137d14ef16c4ab77fb19",
+      "services/highcountry-economy/src/placement-canonical-rectangles.js": "7f241d93f90de5c14e3480cd4d0dd16a395a0f7a",
+      "services/highcountry-economy/src/placement-contract.js": "e941147d17d93219d627ffbbc5212b9dd7814e5c",
+      "services/highcountry-economy/src/placement-recovery.js": "572f31d691963d431a160f94a08625c4fd6d2c4b",
+      "services/highcountry-economy/src/placement-transactions.js": "24d21ef6f88a618d2af9293cab6fcdee67cae824",
+      "services/highcountry-economy/test/placement-canonical-rectangles.test.mjs": "f46ca0cb9a31fad16330b244d5394ebf273d0431"
+    }
+  },
+  {
+    "branch": "reconcile/pr-930-tiled-editor-starter",
+    "blobs": {
+      "docs/reconciliation/PR-930.md": "18aab91cab861ecd404192e469d142c0eae8f3e3",
+      "tools/tiled/README.md": "edecbc1d3e221af6220343102d06c8244ef13849",
+      "tools/tiled/highcountry-world-template.tmj": "9bacca1db824c3c4c54d895335d2821c6688a7f5"
+    }
+  },
+  {
+    "branch": "reconcile/pr-931-tiled-old-town-review",
+    "blobs": {
+      "docs/reconciliation/PR-930.md": "18aab91cab861ecd404192e469d142c0eae8f3e3",
+      "tools/tiled/README.md": "edecbc1d3e221af6220343102d06c8244ef13849",
+      "tools/tiled/highcountry-world-template.tmj": "9bacca1db824c3c4c54d895335d2821c6688a7f5",
+      "docs/reconciliation/PR-931.md": "e045d47ecf372c79cb7230f23a5ddef6b1d01102",
+      "tools/tiled/old-town/README.md": "088aa12860377f2eba231cde5b936aa14e7ca35d",
+      "tools/tiled/old-town/port-alder-old-town-review.tmj": "33f49fc850efb9e162708f12e65c0cd9e7a99c5b"
+    }
+  },
+  {
+    "branch": "reconcile/pr-932-tiled-canonical-preview",
+    "blobs": {
+      "deployments/highcountry/old-town-genesis-assets.json": "b6904cc9e60fe3a134af7f25e1f7555576b85201",
+      "deployments/highcountry/old-town-site-registry.json": "5ba800f1220e459971e13a16fce198610c632b68",
+      "docs/reconciliation/PR-930.md": "18aab91cab861ecd404192e469d142c0eae8f3e3",
+      "tools/tiled/README.md": "edecbc1d3e221af6220343102d06c8244ef13849",
+      "tools/tiled/highcountry-world-template.tmj": "9bacca1db824c3c4c54d895335d2821c6688a7f5",
+      "docs/reconciliation/PR-931.md": "e045d47ecf372c79cb7230f23a5ddef6b1d01102",
+      "tools/tiled/old-town/README.md": "088aa12860377f2eba231cde5b936aa14e7ca35d",
+      "tools/tiled/old-town/port-alder-old-town-review.tmj": "33f49fc850efb9e162708f12e65c0cd9e7a99c5b"
+    }
+  }
+]
