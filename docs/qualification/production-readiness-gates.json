@@ -1,0 +1,104 @@
+{
+  "schema": "HC.PRODUCTION.READINESS.QUALIFICATION.V1",
+  "date": "2026-11-03",
+  "sourceBranch": "integration/highcountry-consolidated",
+  "sourceCommit": "bd0bfc734f414dc6da492d95ba4dc33949e291f7",
+  "qualificationBranch": "qualification/highcountry-production-readiness",
+  "productionDeploymentAuthorized": false,
+  "overallReleaseStatus": "NO_GO",
+  "runs": {
+    "postgres": {
+      "runId": 41695395928,
+      "commit": "0da8925ce637c2d0660b0e5df82f0c3467c00f59",
+      "conclusion": "success",
+      "database": "disposable PostgreSQL 18 Docker service",
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "covered": [
+        "SERIALIZABLE settlement / concurrent reserve",
+        "RLS least privilege",
+        "authenticated runtime and nonce persistence",
+        "revocation and monotonic world authority",
+        "atomic custody transfer",
+        "replay/duplicate prevention",
+        "placement/market double-spend race",
+        "crash-recovery/unknown COMMIT"
+      ],
+      "productionDatabaseUsed": false
+    },
+    "oldTown": {
+      "runId": 41695419543,
+      "commit": "be399cde5b37407f7105e4377d1209243b4c3118",
+      "conclusion": "success",
+      "artworkSha256Verified": 20,
+      "imagesMeasured": 20,
+      "provisionalCentreBottomAnchors": 20,
+      "registeredAtRightLotBoundaryX": 0,
+      "certifiedFoundationPolygons": 0,
+      "certifiedGroundContacts": 0,
+      "coordinateAuthority": "PROVISIONAL_LOCAL_PHASE_C",
+      "landIssuanceEnabled": false,
+      "artifact": "hc-old-town-20-sprite-foundation-evidence",
+      "artifactId": 13260532294
+    }
+  },
+  "releaseGates": [
+    {
+      "id": "PG18_SERIALIZABLE_AND_RLS",
+      "result": "PASS_ISOLATED",
+      "blocksRelease": false,
+      "detail": "Real PostgreSQL 18 with ephemeral DB; no production schema credentials tested."
+    },
+    {
+      "id": "PLACEMENT_AUTHORITY_CUSTODY_RECOVERY",
+      "result": "PASS_ISOLATED",
+      "blocksRelease": false,
+      "detail": "12/12 database-backed placement tests, no failures."
+    },
+    {
+      "id": "OLDTOWN_CANONICAL_PNG_HASHES",
+      "result": "PASS",
+      "blocksRelease": false,
+      "detail": "20/20 original bytes SHA256 match registry."
+    },
+    {
+      "id": "OLDTOWN_MEASURED_FOUNDATION",
+      "result": "BLOCKED",
+      "blocksRelease": true,
+      "detail": "No independently measured architectural foundation polygon for any of 20 source images."
+    },
+    {
+      "id": "OLDTOWN_QUALIFIED_RIGHT_EDGE_CONTACT",
+      "result": "BLOCKED",
+      "blocksRelease": true,
+      "detail": "0/20 registered anchor x coordinates at lot right boundary; all 20 currently provisional centre-bottom. Right-edge contact requires independently measured geometry and owner approval."
+    },
+    {
+      "id": "WORLD_SURVEY_CUSTODY",
+      "result": "BLOCKED",
+      "blocksRelease": true,
+      "detail": "Old Town coordinates are PROVISIONAL_LOCAL_PHASE_C; signed source custody/survey admission not established."
+    },
+    {
+      "id": "PRODUCTION_DB_AND_AUTHENTICATED_ENDPOINT_E2E",
+      "result": "NOT_TESTED",
+      "blocksRelease": true,
+      "detail": "No production database, deployment role, TLS CA, signed user request, or deployed endpoint round trip qualified."
+    },
+    {
+      "id": "LIVE_BROWSER_PIXEL_AND_ACCESSIBILITY_ACCEPTANCE",
+      "result": "NOT_TESTED",
+      "blocksRelease": true,
+      "detail": "No approved measured building foundation/production screen acceptance; prior DOM-only navigation proof retained."
+    },
+    {
+      "id": "GAMEPLAY_RIGHTS_AND_BONUS_ACTIVATION",
+      "result": "DISABLED",
+      "blocksRelease": false,
+      "detail": "Not activated in qualification."
+    }
+  ],
+  "canonicalArtworkModified": false,
+  "mainModified": false,
+  "originalOrphanPRsModified": false
+}
