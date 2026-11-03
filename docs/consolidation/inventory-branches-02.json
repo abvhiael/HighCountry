@@ -1,0 +1,283 @@
+{
+  "schema": "HC.RECONCILIATION.INVENTORY.PART.2",
+  "base": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+  "branches": [
+    {
+      "branch": "reconcile/pr-877-garden-ornaments",
+      "head": "52a4035a490123fd19cd438028090c451169f633",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/garden-ornament-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/garden-ornament-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-877.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-878-physical-survey",
+      "head": "40c4390cde9844751406edd88e5ef000964bc9f7",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 7,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-878.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-879-paths-landscape",
+      "head": "de0cac0b3aa65f1939d406ee5e59652a59308379",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/landscape-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/landscape-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-879.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-881-recreation-relaxation",
+      "head": "4fea539cb8d40fdb804e1f218997024e1cb7179e",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 3,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/recreation-catalogue.js",
+          "status": "added"
+        },
+        {
+          "path": "apps/highcountry-web/test/recreation-catalogue.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-881.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-885-survey-custody",
+      "head": "c821615a682d4348c0b079d7539a9e2a9fca9c4f",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 11,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-WORLD-02-EXHAUSTIVE-SURVEY-VERIFICATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-02-PARCEL-TERRAIN-ACCESS-VALIDATION.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-02-SURVEY-SOURCE-CUSTODY.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-878.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-885.md",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-full-survey.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-parcel-access.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-survey-custody.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-02-survey-custody.test.mjs",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-890-building-economy",
+      "head": "d78a58216b1b617c4a43da3407dc50c492cf9e11",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 2,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-ART-05-BUILDING-ECONOMY-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-890.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-891-port-alder-map-stage",
+      "head": "25170ba971e041f202becf00bfaef087b0a5477d",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 12,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "apps/highcountry-web/src/port-alder-map-stage.js",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-map-catalogue.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-port-alder-artwork-hitboxes.v2.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-PORT-ALDER-MAP-CATALOGUE-STAGE.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-891.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/scripts/build.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/server.mjs",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/src/app.js",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/pr-891-source-snapshots/apps/highcountry-web/src/port-alder-navigation.js",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-port-alder-map-stage.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "scripts/highcountry/hc-world-port-alder-milestone-authority.test.mjs",
+          "status": "added"
+        },
+        {
+          "path": "services/highcountry-economy/src/port-alder-purchase-milestone.js",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-893-workshop-abilities",
+      "head": "3680a19162cb1fc50bf2f663be406f769b3d2486",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 4,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "docs/highcountry/HC-ART-05-B-WORKSHOP-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-ART-05-BUILDING-ECONOMY-ABILITIES-CONTRACT-V1.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-890.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-893.md",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "branch": "reconcile/pr-895-old-town-abilities-landmarks",
+      "head": "09999a7e8613a5d19dd9090e55d42eafe9593f24",
+      "mergeBase": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+      "ahead": 4,
+      "behind": 0,
+      "changedFiles": [
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-building-abilities.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "deployments/highcountry/hc-world-pa-oldtown-permanent-landmarks.v1.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/highcountry/HC-WORLD-06-PA-OLDTOWN-V1-ABILITY-AND-LANDMARK-LOCK.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/reconciliation/PR-895.md",
+          "status": "added"
+        }
+      ]
+    }
+  ]
+}
