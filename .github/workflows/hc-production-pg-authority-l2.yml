@@ -31,6 +31,12 @@ jobs:
       HC_PLACE_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/highcountry_qualification
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            services
+            scripts/highcountry
+            deployments/highcountry
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
