@@ -1,0 +1,35 @@
+{
+  "sourceGenesisMainSha": "efa93ca96d58533e0f47e9f9ec3d03ed6cacb07b",
+  "baseHighCountryMainSha": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+  "reconciledBranches": 28,
+  "changedPaths": 126,
+  "conflictsRequiringReview": [
+    {
+      "path": "apps/highcountry-web/src/red-mesa-leisure-catalogue.js",
+      "retained": "Genesis main",
+      "reconciledBranch": "reconcile/pr-929-outbuilding-layout",
+      "note": "source differed; inspect against current app/service"
+    },
+    {
+      "path": "apps/highcountry-web/src/regional-memorabilia-catalogue.js",
+      "retained": "Genesis main",
+      "reconciledBranch": "reconcile/pr-856-regional-memorabilia",
+      "note": "source differed; inspect against current app/service"
+    },
+    {
+      "path": "apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs",
+      "retained": "Genesis main",
+      "reconciledBranch": "reconcile/pr-929-outbuilding-layout",
+      "note": "source differed; inspect against current app/service"
+    },
+    {
+      "path": "services/highcountry-economy/src/placement-contract.js",
+      "retained": "Genesis main",
+      "reconciledBranch": "reconcile/pr-929-outbuilding-layout",
+      "note": "source differed; inspect against current app/service"
+    }
+  ],
+  "designAuthority": "PROVISIONAL_AND_FAIL_CLOSED",
+  "runtimeStatus": "integration branch only; no title/bonus issuance",
+  "note": "No approved terrain source/keyring or production authenticated milestone endpoint is fabricated."
+}
