@@ -1,0 +1,42 @@
+name: HC Old Town Tiled canonical PNG preview package
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - reconcile/pr-932-tiled-canonical-preview
+    paths:
+      - tools/tiled/old-town/**
+      - .github/workflows/hc-old-town-tiled-preview.yml
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate hash-verified image tileset and map
+        run: node tools/tiled/old-town/build-canonical-preview.mjs
+      - name: Verify only preview structure and unchanged parcel census
+        run: |
+          node --input-type=module -e "
+          import fs from 'node:fs';
+          const original=JSON.parse(fs.readFileSync('tools/tiled/old-town/port-alder-old-town-review.tmj','utf8'));
+          const preview=JSON.parse(fs.readFileSync('tools/tiled/old-town/port-alder-old-town-art-preview.tmj','utf8'));
+          const art=preview.layers.find(x=>x.name==='Canonical artwork — PREVIEW ONLY');
+          const parcels=preview.layers.find(x=>x.name==='Parcel boundaries');
+          if(!art||art.objects.length!==20||!art.objects.every(x=>x.properties.find(p=>p.name==='foundation_verified')?.value===false))throw Error('preview layer invalid');
+          if(JSON.stringify(parcels)!==JSON.stringify(original.layers.find(x=>x.name==='Parcel boundaries')))throw Error('parcel drift');
+          if(preview.tilesets.length!==1||!fs.readFileSync('tools/tiled/old-town/old-town-canonical-originals.tsx','utf8').includes('tilecount=\"20\"'))throw Error('tileset invalid');
+          console.log('PASS 20 art previews / 60 unchanged parcels / 20-image TSX / unqualified placement');
+          "
+      - name: Package original PNGs and Tiled files
+        run: |
+          mkdir -p package/tools/tiled/old-town package/apps/highcountry-web/public/assets/highcountry
+          cp tools/tiled/old-town/*.tmj tools/tiled/old-town/*.tsx tools/tiled/old-town/README.md package/tools/tiled/old-town/
+          cp -r apps/highcountry-web/public/assets/highcountry/old-town package/apps/highcountry-web/public/assets/highcountry/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hc-old-town-tiled-originals
+          path: package/
+          if-no-files-found: error
+          retention-days: 14
