@@ -1,0 +1,50 @@
+name: HighCountry production qualification - isolated PostgreSQL authority L2
+on:
+  push:
+    branches: [qualification/highcountry-production-readiness]
+    paths:
+      - '.github/workflows/hc-production-pg-authority-l2.yml'
+      - 'scripts/qualification/postgres-authority-qualification.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  postgres-authority:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: highcountry_qualification
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d highcountry_qualification"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 15
+    env:
+      HC_TEST_POSTGRES_URL: postgres://postgres:postgres@localhost:5432/highcountry_qualification
+      HC_PLACE_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/highcountry_qualification
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install only existing economy package dependencies
+        working-directory: services/highcountry-economy
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund
+      - name: PostgreSQL L2 - real serializable settlement, least-privilege role and RLS
+        run: node services/highcountry-economy/test/postgres-live.integration.mjs
+      - name: PostgreSQL L2 - actual placement authority, revocation, exact-unit custody, restart and concurrency
+        run: |
+          node --test --test-concurrency=1 \
+            services/highcountry-economy/test/placement-authority-postgres.test.mjs \
+            services/highcountry-economy/test/placement-market-postgres.test.mjs
+      - name: Emit non-production qualification boundary
+        run: |
+          echo "Executed against disposable PostgreSQL 18 Docker service, NOT Neon or production."
+          echo "No site geography/title grants and no live endpoint deployed."
