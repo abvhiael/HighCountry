@@ -1,0 +1,23 @@
+name: HC-PLACE-04 reconciliation targeted
+on:
+  push:
+    branches:
+      - reconcile/pr-928-canonical-rectangles
+    paths:
+      - 'services/highcountry-economy/src/**'
+      - 'services/highcountry-economy/test/placement-canonical-rectangles.test.mjs'
+      - 'apps/highcountry-web/src/**'
+      - 'apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs'
+      - '.github/workflows/hc-place-04-reconciliation-targeted.yml'
+permissions:
+  contents: read
+jobs:
+  affected-level-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check services/highcountry-economy/src/placement-canonical-rectangles.js
+      - run: node --test services/highcountry-economy/test/placement-canonical-rectangles.test.mjs apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs
