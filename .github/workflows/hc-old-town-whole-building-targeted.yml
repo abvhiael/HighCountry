@@ -1,0 +1,21 @@
+name: HighCountry B2 Old Town whole-building navigation qualification
+on:
+  push:
+    branches:
+      - integration/highcountry-consolidated
+    paths:
+      - scripts/consolidation/old-town-building-navigation.test.mjs
+      - .github/workflows/hc-old-town-whole-building-targeted.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  whole-building-navigation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Level 2 - test only newly integrated whole-building image and keyboard navigation composition
+        run: node --test scripts/consolidation/old-town-building-navigation.test.mjs
