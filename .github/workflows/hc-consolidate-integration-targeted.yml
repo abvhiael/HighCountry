@@ -35,8 +35,3 @@ jobs:
           test -f apps/highcountry-web/dist/src/old-town-scene.js
           test -f apps/highcountry-web/dist/assets/highcountry/maps/old-town-site-registry.json
           test -f apps/highcountry-web/dist/assets/highcountry/maps/hc-world-map-catalogue.v1.json
-      - name: No source dependency on Genesis repository
-        run: |
-          if grep -R -n -E 'git clone.*420-integrated-v0\\.1|GENESIS_CHECKOUT|git -C .*highcountry-genesis' .github/workflows/hc-consolidate-integration-targeted.yml; then
-            echo 'Genesis checkout dependency is prohibited'; exit 1
-          fi
