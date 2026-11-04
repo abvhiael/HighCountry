@@ -1,0 +1,38 @@
+name: HighCountry B2 Catalogues and Placement Conflict Qualification
+on:
+  push:
+    branches:
+      - integration/highcountry-consolidated
+    paths:
+      - apps/highcountry-web/src/regional-memorabilia-catalogue.js
+      - apps/highcountry-web/src/red-mesa-leisure-catalogue.js
+      - apps/highcountry-web/test/regional-memorabilia.test.mjs
+      - apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs
+      - services/highcountry-economy/src/placement-contract.js
+      - .github/workflows/hc-consolidation-conflict-targeted.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  affected-catalogues-and-geometry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Level 1 - check only reconciled catalogue, placement and dependent affected tests
+        run: |
+          node --check apps/highcountry-web/src/regional-memorabilia-catalogue.js
+          node --check apps/highcountry-web/src/red-mesa-leisure-catalogue.js
+          node --check services/highcountry-economy/src/placement-contract.js
+          node --test \
+            apps/highcountry-web/test/regional-memorabilia.test.mjs \
+            apps/highcountry-web/test/regional-memorabilia-catalogue.test.mjs \
+            apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs \
+            services/highcountry-economy/test/placement-canonical-rectangles.test.mjs
+      - name: Level 2 - reassemble affected catalogue modules in real HighCountry bundle
+        run: |
+          node apps/highcountry-web/scripts/build.mjs
+          test -f apps/highcountry-web/dist/src/regional-memorabilia-catalogue.js
+          test -f apps/highcountry-web/dist/src/red-mesa-leisure-catalogue.js

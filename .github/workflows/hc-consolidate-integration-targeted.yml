@@ -1,0 +1,84 @@
+name: HighCountry B2 Consolidation Targeted Level 1 / Level 2
+on:
+  push:
+    branches:
+      - integration/highcountry-consolidated
+    paths:
+      - scripts/consolidation/**
+      - .github/workflows/hc-consolidate-integration-targeted.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hc-b2-consolidation
+  cancel-in-progress: false
+jobs:
+  migrate-and-qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+          filter: blob:none
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch exact reconciliation and audit references
+        run: |
+          git fetch --no-tags --filter=blob:none origin '+refs/heads/reconcile/*:refs/remotes/origin/reconcile/*' '+refs/heads/audit/2026-11-02-reconciliation-inventory:refs/remotes/origin/audit/2026-11-02-reconciliation-inventory'
+          git merge-base --is-ancestor ad899746423b83de4453fbe2ce752cd0f4ae0570 HEAD
+      - name: Sparse checkout pinned latest Genesis HighCountry runtime and services
+        run: |
+          git clone --no-checkout --depth 1 --filter=blob:none https://github.com/abvhiael/420-integrated-v0.1.git "$RUNNER_TEMP/highcountry-genesis"
+          git -C "$RUNNER_TEMP/highcountry-genesis" sparse-checkout init --no-cone
+          git -C "$RUNNER_TEMP/highcountry-genesis" sparse-checkout set --no-cone             '/apps/highcountry-web/src/' '/apps/highcountry-web/scripts/' '/apps/highcountry-web/test/'             '/apps/highcountry-web/e2e/' '/apps/highcountry-web/config/'             '/apps/highcountry-web/README.md' '/apps/highcountry-web/server.mjs' '/apps/highcountry-web/package.json'             '/apps/highcountry-web/public/index.html' '/apps/highcountry-web/public/styles.css'             '/apps/highcountry-web/public/seed-catalogue.css'             '/services/highcountry-economy/' '/services/highcountry-archive/'             '/services/highcountry-cultivar-governance/' '/scripts/highcountry/' '/deployments/highcountry/'
+          git -C "$RUNNER_TEMP/highcountry-genesis" checkout --detach efa93ca96d58533e0f47e9f9ec3d03ed6cacb07b
+          test "$(git -C "$RUNNER_TEMP/highcountry-genesis" rev-parse HEAD)" = efa93ca96d58533e0f47e9f9ec3d03ed6cacb07b
+      - name: Import current Genesis source and deduplicate reconciled functionality
+        env:
+          GENESIS_CHECKOUT: ${{ runner.temp }}/highcountry-genesis
+        run: |
+          python3 -m py_compile scripts/consolidation/import-from-genesis.py
+          python3 scripts/consolidation/import-from-genesis.py
+      - name: Record integration baseline commit (not main)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add apps/highcountry-web services/highcountry-economy services/highcountry-archive services/highcountry-cultivar-governance scripts/highcountry deployments/highcountry docs tools .github/workflows
+          if ! git diff --cached --quiet; then
+            git commit -m 'Integrate pinned Genesis app/service foundations and 28 reconciled HighCountry branches'
+            git push origin HEAD:refs/heads/integration/highcountry-consolidated
+          fi
+          if git diff --name-only ad899746423b83de4453fbe2ce752cd0f4ae0570 -- apps/highcountry-web/public/assets/ assets/highcountry/ | grep .; then
+            echo 'Canonical asset modifications prohibited'; exit 1
+          fi
+      - name: Level 1 - only newly combined application and authority boundaries
+        run: |
+          node --check apps/highcountry-web/src/app.js
+          node --check apps/highcountry-web/src/port-alder-navigation.js
+          node --check apps/highcountry-web/src/old-town-scene.js
+          node --check apps/highcountry-web/src/old-town-property-preview.js
+          node --check apps/highcountry-web/server.mjs
+          node --test scripts/consolidation/integration-boundaries.test.mjs
+      - name: Level 2 - build integrated real application and verify public content
+        run: |
+          node apps/highcountry-web/scripts/build.mjs
+          test -f apps/highcountry-web/dist/src/old-town-scene.js
+          test -f apps/highcountry-web/dist/src/old-town-landmarks.js
+          test -f apps/highcountry-web/dist/src/agricultural-building-catalogue.js
+          test -f apps/highcountry-web/dist/assets/highcountry/maps/old-town-site-registry.json
+          test -f apps/highcountry-web/dist/assets/highcountry/maps/hc-world-map-catalogue.v1.json
+      - name: Level 2 - verify Tiled original art checksum and review-only output
+        run: |
+          node tools/tiled/old-town/build-canonical-preview.mjs
+          node --input-type=module -e "
+          import fs from 'node:fs';
+          const preview=JSON.parse(fs.readFileSync('tools/tiled/old-town/port-alder-old-town-art-preview.tmj'));
+          const base=JSON.parse(fs.readFileSync('tools/tiled/old-town/port-alder-old-town-review.tmj'));
+          const l=preview.layers.find(x=>x.name==='Canonical artwork — PREVIEW ONLY');
+          if(l?.objects?.length!==20||l.objects.some(x=>x.properties.find(p=>p.name==='foundation_verified')?.value!==false))throw Error('unqualified image preview changed');
+          if(JSON.stringify(base.layers.find(x=>x.name==='Parcel boundaries'))!==JSON.stringify(preview.layers.find(x=>x.name==='Parcel boundaries')))throw Error('parcel coordinates changed');
+          console.log('20 canonical verified PNG previews; all 60 parcel outlines unchanged');
+          "

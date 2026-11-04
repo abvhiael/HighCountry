@@ -1,0 +1,40 @@
+{
+  "sourceGenesisMainSha": "efa93ca96d58533e0f47e9f9ec3d03ed6cacb07b",
+  "baseHighCountryMainSha": "ad899746423b83de4453fbe2ce752cd0f4ae0570",
+  "reconciledBranches": 28,
+  "changedPaths": 126,
+  "conflictsRequiringReview": [],
+  "designAuthority": "PROVISIONAL_AND_FAIL_CLOSED",
+  "runtimeStatus": "combined foundation on integration branch; production authorization and PostgreSQL-backed endpoints not qualified",
+  "note": "No approved terrain source/keyring or production authenticated milestone endpoint is fabricated.",
+  "resolvedConflicts": [
+    {
+      "path": "apps/highcountry-web/src/regional-memorabilia-catalogue.js",
+      "decision": "Reconciled #856 version adopted; 12 exact canonical PNG filenames match HighCountry main and wall/tabletop anchor predicates fail closed."
+    },
+    {
+      "path": "apps/highcountry-web/src/red-mesa-leisure-catalogue.js",
+      "decision": "Reconciled #928/#929 Red Mesa click-only exception adopted; ownership, server authorization, ground anchor, collision qualification and no overlap remain mandatory."
+    },
+    {
+      "path": "apps/highcountry-web/test/red-mesa-leisure-catalogue.test.mjs",
+      "decision": "Updated matching original scoped test accepted; requalified with newly combined contract."
+    },
+    {
+      "path": "services/highcountry-economy/src/placement-contract.js",
+      "decision": "Surgical addition of structure layer and outdoor_ground whitelist; no other Genesis placement validators relaxed."
+    }
+  ],
+  "qualifications": [
+    {
+      "run": 41587413154,
+      "level": "newly combined Level 1/2",
+      "status": "success"
+    },
+    {
+      "run": 41587834992,
+      "level": "affected catalogue/geometry Level 1/2",
+      "status": "success"
+    }
+  ]
+}
