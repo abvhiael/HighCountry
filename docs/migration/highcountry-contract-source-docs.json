@@ -1,0 +1,162 @@
+{
+  "type": "Historical source PR documentation",
+  "authority": "Genesis owns shared SDKs/protocols; HighCountry owns game docs",
+  "mode": "preserve absent docs verbatim; never overwrite current canonical docs",
+  "records": [
+    {
+      "sourcePr": 796,
+      "path": "docs/highcountry/HC-NEXT-4.1-AUTHENTICATED-BUDS.md",
+      "sourceBlobSha": "0541d06c3e128dc387890a03c5011a68e11ee2a0"
+    },
+    {
+      "sourcePr": 789,
+      "path": "docs/highcountry/HC-NEXT-3.2-MANUFACTURING-RECOVERY.md",
+      "sourceBlobSha": "9baf086a6f711936318f77d25ad6459f1aa852e7"
+    },
+    {
+      "sourcePr": 786,
+      "path": "docs/highcountry/HC-NEXT-3.1-EQUIPMENT-CLASSES.md",
+      "sourceBlobSha": "f69319761c68c928a92668006367fe0fd7ec65fa"
+    },
+    {
+      "sourcePr": 627,
+      "path": "docs/highcountry/DEPLOYMENT-AND-TRUST.md",
+      "sourceBlobSha": "636201633fbe5559610d46bced2b9212ed6f9f2d"
+    },
+    {
+      "sourcePr": 627,
+      "path": "docs/highcountry/HIGHCOUNTRY-TESTNET-WORK-ROADMAP.md",
+      "sourceBlobSha": "5ece985c11a7a7551ab712685fccf95d45aec249"
+    },
+    {
+      "sourcePr": 627,
+      "path": "docs/highcountry/R04-LEVEL2-CANONICAL-INTEGRATION.md",
+      "sourceBlobSha": "d12a3181f5e47834fd0ca8d8bf9e477546851bb1"
+    },
+    {
+      "sourcePr": 627,
+      "path": "docs/highcountry/R04-LEVEL2-INTEGRATION-REVIEW.md",
+      "sourceBlobSha": "2a23805d4525503fea351d17513df6569b18c7a3"
+    },
+    {
+      "sourcePr": 627,
+      "path": "docs/highcountry/qualification/R04-LEVEL2-EXACT-SHA.md",
+      "sourceBlobSha": "543e6577a95f3ba8137896ee9262437533ed20c7"
+    },
+    {
+      "sourcePr": 626,
+      "path": "docs/highcountry/R04.14-UPGRADE-EMERGENCY.md",
+      "sourceBlobSha": "846879ffa53c7a9232cc499702613e33c0067c8b"
+    },
+    {
+      "sourcePr": 626,
+      "path": "docs/highcountry/qualification/R04.14-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "b963dcf8da561e9d0c031e455c34ddb169d88db0"
+    },
+    {
+      "sourcePr": 625,
+      "path": "docs/highcountry/R04.13-GLOBAL420CUP.md",
+      "sourceBlobSha": "1caec06cb69d600772549f87a85555c8ef307f36"
+    },
+    {
+      "sourcePr": 625,
+      "path": "docs/highcountry/qualification/R04.13-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "a338016c12dfe92231aede1c4b3ba8618628bdd2"
+    },
+    {
+      "sourcePr": 624,
+      "path": "docs/highcountry/R04.12-SEASONS-COMPETITIONS.md",
+      "sourceBlobSha": "a9d636db1912eb2c7fc522fe50367c476949d34e"
+    },
+    {
+      "sourcePr": 624,
+      "path": "docs/highcountry/qualification/R04.12-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "4f193e91eb96acfda654bee3a53ebd60c72bd49c"
+    },
+    {
+      "sourcePr": 623,
+      "path": "docs/highcountry/R04.11-COOPERATIVE-GOVERNANCE.md",
+      "sourceBlobSha": "1a9aaef519b2313c3e99d52cd532814ad45bd83c"
+    },
+    {
+      "sourcePr": 623,
+      "path": "docs/highcountry/qualification/R04.11-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "6d189fee5e9ae7f115bab323fe65a7e6115d2a63"
+    },
+    {
+      "sourcePr": 622,
+      "path": "docs/highcountry/R04.10-ORGANIZATIONS-AUTHORITY.md",
+      "sourceBlobSha": "9cd41ff4dfad8c2fad01c3dcfe62e6d278c5b805"
+    },
+    {
+      "sourcePr": 622,
+      "path": "docs/highcountry/qualification/R04.10-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "a495ed5a8b16152439c7d3b59015d8b1e3b6d3ef"
+    },
+    {
+      "sourcePr": 619,
+      "path": "docs/highcountry/R04.9-RIGHTS-LEASES-LICENSES.md",
+      "sourceBlobSha": "bb28c76d7f10c5591eb932e5970501579a68abec"
+    },
+    {
+      "sourcePr": 618,
+      "path": "docs/highcountry/R04.8-MARKET.md",
+      "sourceBlobSha": "64443d6616cd588f8abf5d759a69066d92159e26"
+    },
+    {
+      "sourcePr": 618,
+      "path": "docs/highcountry/R04.8-PRODUCTION-DEPENDENCY-RECONCILIATION.md",
+      "sourceBlobSha": "d29ca8318225f4c642eb03b91da4142e57811b2f"
+    },
+    {
+      "sourcePr": 618,
+      "path": "docs/highcountry/qualification/R04.8-CANONICAL-CUSTODY-AND-ECONOMIC-LEVEL2-EXACT-SHA.md",
+      "sourceBlobSha": "877d4fad1a4818f1a3eed184b688f160ddcfc3a2"
+    },
+    {
+      "sourcePr": 618,
+      "path": "docs/highcountry/qualification/R04.8-LEVEL1-AND-ECONOMIC-LEVEL2-EXACT-SHA.md",
+      "sourceBlobSha": "a6959990c62a89d4e4cb1d102510fda6a74a6261"
+    },
+    {
+      "sourcePr": 617,
+      "path": "docs/highcountry/R04.7-MISSION-ENGINE.md",
+      "sourceBlobSha": "cc76242d0b7f651f944c0c860de252bad7276323"
+    },
+    {
+      "sourcePr": 615,
+      "path": "docs/highcountry/R04.6-SKILL-RESEARCH-DISCOVERY.md",
+      "sourceBlobSha": "e5d848e6898004335f3abb6fe873f2146f263d30"
+    },
+    {
+      "sourcePr": 613,
+      "path": "docs/highcountry/R04.5-BUDS-AND-ECONOMIC-SETTLEMENT.md",
+      "sourceBlobSha": "8841bc54e33aed9c07378064539ac738983f1770"
+    },
+    {
+      "sourcePr": 613,
+      "path": "docs/highcountry/qualification/R04.5-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "d5e917fc6c4f6b3fdc487730f00b55f828afa5ef"
+    },
+    {
+      "sourcePr": 612,
+      "path": "docs/highcountry/R04.4-EQUIPMENT-LIFECYCLE.md",
+      "sourceBlobSha": "1d812b5adc79985cb8fafec8ec56d883f2314ad4"
+    },
+    {
+      "sourcePr": 611,
+      "path": "docs/highcountry/R04.3-MANUFACTURING-ENGINE.md",
+      "sourceBlobSha": "ea529083bdddeade2a8d5163590289e3af195158"
+    },
+    {
+      "sourcePr": 611,
+      "path": "docs/highcountry/qualification/R04.3-LEVEL1-EXACT-SHA.md",
+      "sourceBlobSha": "057e62dc3bd0a171add215de19265ca8a9b8fc21"
+    },
+    {
+      "sourcePr": 610,
+      "path": "docs/highcountry/R04.2-EQUIPMENT-REGISTRY.md",
+      "sourceBlobSha": "442e08cd6e3c65d5b4fdc9c45a6fb1bad811c8e7"
+    }
+  ]
+}
