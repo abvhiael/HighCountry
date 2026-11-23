@@ -8,6 +8,7 @@ on:
       - .github/workflows/hc-full-game-solidity-matrix.yml
   push:
     branches:
+      - main
       - migration/highcountry-contract-source-20261122
     paths:
       - .github/workflows/hc-full-game-solidity-matrix.yml
