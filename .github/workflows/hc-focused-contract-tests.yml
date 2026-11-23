@@ -23,6 +23,7 @@ jobs:
       matrix:
         test:
           - test/highcountry/unit/equipment/EquipmentRegistry.t.sol
+          - test/highcountry/unit/equipment/EquipmentClassCatalogueV1.t.sol
           - test/highcountry/unit/market/CanonicalMarketEscrow.t.sol
           - test/highcountry/unit/security/R0414Authority.t.sol
           - test/highcountry/unit/manufacturing/ManufacturingEngine.t.sol
