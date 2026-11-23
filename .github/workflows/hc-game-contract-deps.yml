@@ -36,3 +36,24 @@ jobs:
         run: node scripts/highcountry/hydrate-genesis-shared-contracts.mjs _genesis
       - name: Verify standalone HighCountry and pinned shared import graph
         run: node scripts/highcountry/verify-game-contract-dependencies.mjs
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+      - name: Configure isolated game-contract Solidity compilation
+        run: |
+          cat > contracts/foundry.toml <<'TOML'
+          [profile.default]
+          src = "src"
+          test = "test"
+          out = "out"
+          cache_path = "cache"
+          solc_version = "0.8.24"
+          evm_version = "cancun"
+          optimizer = true
+          optimizer_runs = 200
+          via_ir = true
+          ffi = false
+          fuzz = { runs = 256, max_test_rejects = 65536, seed = "0x420" }
+          TOML
+      - name: Compile and exercise migrated EquipmentRegistry unit tests
+        run: forge test --root contracts --match-path 'test/highcountry/unit/equipment/EquipmentRegistry.t.sol' --fuzz-runs 256 -vv
