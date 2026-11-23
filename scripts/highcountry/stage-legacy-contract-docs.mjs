@@ -27,4 +27,6 @@ await writeFile('docs/migration/highcountry-contract-source-docs.json',JSON.stri
 console.log('Preserved',report.records.length,'previously missing game-owned documents across',PRS.length,'source PRs');
 run('git',['add','docs/highcountry','docs/migration/highcountry-contract-source-docs.json']);
 run('git',['-c','user.name=github-actions[bot]','-c','user.email=41898282+github-actions[bot]@users.noreply.github.com','commit','-m','Preserve unmerged game-owned R04/HC-NEXT contract qualification documents']);
+run('git',['fetch','origin','migration/highcountry-contract-source-20261122']);
+run('git',['-c','user.name=github-actions[bot]','-c','user.email=41898282+github-actions[bot]@users.noreply.github.com','rebase','origin/migration/highcountry-contract-source-20261122']);
 run('git',['push','origin','HEAD:migration/highcountry-contract-source-20261122']);
