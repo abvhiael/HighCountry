@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.24;
 
-import "../../../src/highcountry/equipment/EquipmentClassCatalogueV1.sol";
+import "../../../../src/highcountry/equipment/EquipmentClassCatalogueV1.sol";
 
 contract EquipmentClassCatalogueV1Test {
     EquipmentClassCatalogueV1 internal catalogue = new EquipmentClassCatalogueV1();
@@ -42,16 +42,20 @@ contract EquipmentClassCatalogueV1Test {
     }
 
     function testInvalidEquipmentClassAndTierRevert() public {
-        try catalogue.definition(5, 0) returns (EquipmentClassCatalogueV1.Definition memory) {
-            revert("invalid class accepted");
+        bool accepted;
+        try catalogue.definition(5, 0) returns (EquipmentClassCatalogueV1.Definition memory result) {
+            accepted = result.maximum > 0;
         } catch {}
-        try catalogue.definition(0, 2) returns (EquipmentClassCatalogueV1.Definition memory) {
-            revert("invalid tier accepted");
+        require(!accepted, "invalid class accepted");
+        try catalogue.definition(0, 2) returns (EquipmentClassCatalogueV1.Definition memory result) {
+            accepted = result.maximum > 0;
         } catch {}
+        require(!accepted, "invalid tier accepted");
         try catalogue.definition(type(uint8).max, type(uint8).max)
-            returns (EquipmentClassCatalogueV1.Definition memory) {
-            revert("invalid tuple accepted");
+            returns (EquipmentClassCatalogueV1.Definition memory result) {
+            accepted = result.maximum > 0;
         } catch {}
+        require(!accepted, "invalid tuple accepted");
     }
 
     function testResourceBindingPerClass() public {
