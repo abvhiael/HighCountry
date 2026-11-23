@@ -1,3 +1,4 @@
+import {entertainmentCatalogue,getEntertainmentAsset} from './entertainment-catalogue.js';
 import {agriculturalBuildingCatalogue,getAgriculturalBuilding} from './agricultural-building-catalogue.js';
 import {recreationCatalogue,getRecreationAsset} from './recreation-catalogue.js';
 import {landscapeCatalogue,getLandscapeAsset} from './landscape-catalogue.js';
@@ -205,9 +206,17 @@ export function mountMarketplace({document,main,runtime,authenticate,fetchImpl=f
    img.addEventListener('error',()=>{img.hidden=true;});
    entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));agricultural.append(entry);
   }
+  const entertainment=section('Entertainment, recreation & relaxation');
+  entertainment.append(el('p','Decorative asset catalogue only. Purchases and prices require authenticated server-verified listings.'));
+  for(const asset of entertainmentCatalogue){
+   const item=el('article');const img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   item.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.placement.layer));
+   entertainment.append(item);
+  }
   const inventory=section('My verified inventory');
   if(!data.inventory.length)inventory.append(el('p','No tradeable registered inventory. Local guest harvests cannot be listed.'));
-  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||getPoster(item.asset)?.name||getSignPlaque(item.asset)?.name||getFramedArt(item.asset)?.name||getMountedDecor(item.asset)?.name||getSmallDecor(item.asset)?.name||getFireGatheringFeature(item.asset)?.name||getGardenOrnament(item.asset)?.name||getLandscapeAsset(item.asset)?.name||getRecreationAsset(item.asset)?.name||getAgriculturalBuilding(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
+  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||getPoster(item.asset)?.name||getSignPlaque(item.asset)?.name||getFramedArt(item.asset)?.name||getMountedDecor(item.asset)?.name||getSmallDecor(item.asset)?.name||getFireGatheringFeature(item.asset)?.name||getGardenOrnament(item.asset)?.name||getLandscapeAsset(item.asset)?.name||getRecreationAsset(item.asset)?.name||getAgriculturalBuilding(item.asset)?.name||getEntertainmentAsset(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
   if(data.mode==='ordinary'){
    const list=section('Create a listing');
    const asset=formField(list,'Verified asset ID');
