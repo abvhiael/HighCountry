@@ -1,0 +1,7 @@
+# Genesis-owned shared protocol contracts are hydrated at CI runtime, never vendored.
+/src/*
+!/src/highcountry/
+/test/*
+!/test/highcountry/
+/out/
+/cache/

@@ -1,0 +1,39 @@
+name: HighCountry standalone pinned contract dependency qualification
+on:
+  pull_request:
+    paths:
+      - 'contracts/**'
+      - 'scripts/highcountry/hydrate-genesis-shared-contracts.mjs'
+      - '.github/workflows/hc-game-contract-deps.yml'
+  push:
+    branches:
+      - main
+      - migration/highcountry-contract-source-20261122
+    paths:
+      - 'contracts/**'
+      - 'scripts/highcountry/hydrate-genesis-shared-contracts.mjs'
+      - '.github/workflows/hc-game-contract-deps.yml'
+  workflow_dispatch:
+jobs:
+  dependency-qualification:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: abvhiael/420-integrated-v0.1
+          ref: f5072ae8d343aca4731e02b774c41394b4228d69
+          path: _genesis
+          sparse-checkout: |
+            contracts/src
+            contracts/test/helpers
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Hydrate externally owned Genesis dependencies into ephemeral CI workspace
+        run: node scripts/highcountry/hydrate-genesis-shared-contracts.mjs _genesis
+      - name: Verify standalone HighCountry and pinned shared import graph
+        run: node scripts/highcountry/verify-game-contract-dependencies.mjs

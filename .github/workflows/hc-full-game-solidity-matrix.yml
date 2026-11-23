@@ -1,0 +1,62 @@
+name: HighCountry complete migrated Solidity test matrix
+on:
+  pull_request:
+    paths:
+      - contracts/**
+      - scripts/highcountry/prepare-focused-contract-test.mjs
+      - scripts/highcountry/hydrate-genesis-shared-contracts.mjs
+      - .github/workflows/hc-full-game-solidity-matrix.yml
+  push:
+    branches:
+      - main
+      - migration/highcountry-contract-source-20261122
+    paths:
+      - .github/workflows/hc-full-game-solidity-matrix.yml
+  workflow_dispatch:
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      tests: ${{ steps.collect.outputs.tests }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: collect
+        name: Enumerate game-owned Solidity test files
+        run: |
+          echo "tests=$(find contracts/test/highcountry -name '*.t.sol' -type f | sed 's#^contracts/##' | sort | node -e "let s='';process.stdin.on('data',x=>s+=x);process.stdin.on('end',()=>process.stdout.write(JSON.stringify(s.trim().split('\\n'))))")" >> "$GITHUB_OUTPUT"
+  game-tests:
+    needs: enumerate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        test: ${{ fromJson(needs.enumerate.outputs.tests) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: abvhiael/420-integrated-v0.1
+          ref: f5072ae8d343aca4731e02b774c41394b4228d69
+          path: _genesis
+          sparse-checkout: |
+            contracts/src
+            contracts/test/helpers
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+      - name: Pin Genesis-owned shared protocol and test contracts
+        run: node scripts/highcountry/hydrate-genesis-shared-contracts.mjs _genesis
+      - name: Prepare dependency-closed exact test
+        env:
+          TEST_PATH: ${{ matrix.test }}
+        run: node scripts/highcountry/prepare-focused-contract-test.mjs "$TEST_PATH"
+      - name: Execute game-owned Solidity test without substituting protocol authority
+        run: forge test --root /tmp/highcountry-focused-foundry --fuzz-runs 256 -vv
