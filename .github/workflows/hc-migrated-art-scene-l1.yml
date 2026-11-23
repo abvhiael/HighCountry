@@ -31,4 +31,4 @@ jobs:
       - name: Source syntax check
         run: node --check apps/highcountry-web/src/marketplace.js && node --check apps/highcountry-web/src/cultivation-scene-layout.js && node --check apps/highcountry-web/src/textile-catalogue.js
       - name: Migrated textile and scene tests
-        run: node --test apps/highcountry-web/test/textile-catalogue.test.js apps/highcountry-web/test/hc-gfx-214-layout.test.mjs
+        run: node --test apps/highcountry-web/test/textile-catalogue.test.js apps/highcountry-web/test/hc-gfx-214-layout.test.mjs apps/highcountry-web/test/poster-catalogue.test.mjs apps/highcountry-web/test/signs-plaques-catalogue.test.mjs apps/highcountry-web/test/framed-art-catalogue.test.mjs apps/highcountry-web/test/mounted-decor-catalogue.test.mjs apps/highcountry-web/test/small-decor-catalogue.test.mjs apps/highcountry-web/test/fire-gathering-catalogue.test.mjs apps/highcountry-web/test/garden-ornament-catalogue.test.mjs apps/highcountry-web/test/landscape-catalogue.test.mjs apps/highcountry-web/test/recreation-catalogue.test.mjs apps/highcountry-web/test/hc-next-4-4-marketplace.test.mjs
