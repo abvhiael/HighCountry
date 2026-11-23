@@ -1,0 +1,21 @@
+name: Cancel duplicate HighCountry contract migration qualification jobs
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/hc-cancel-duplicate-qualifications.yml
+jobs:
+  deduplicate:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preserve newest per-workflow runs and cancel only superseded contract branch runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/highcountry/cancel-duplicate-qualification-runs.mjs
