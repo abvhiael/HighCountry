@@ -125,7 +125,7 @@ export function mountMarketplace({document,main,runtime,authenticate,fetchImpl=f
   }
   const inventory=section('My verified inventory');
   if(!data.inventory.length)inventory.append(el('p','No tradeable registered inventory. Local guest harvests cannot be listed.'));
-  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
+  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
   if(data.mode==='ordinary'){
    const list=section('Create a listing');
    const asset=formField(list,'Verified asset ID');
