@@ -7,6 +7,7 @@ on:
       - '.github/workflows/hc-game-contract-deps.yml'
   push:
     branches:
+      - main
       - migration/highcountry-contract-source-20261122
     paths:
       - 'contracts/**'
