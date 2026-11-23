@@ -1,0 +1,27 @@
+name: HighCountry migrated contracts import integrity
+on:
+  pull_request:
+    paths:
+      - 'contracts/**'
+      - 'scripts/highcountry/verify-game-contract-dependencies.mjs'
+      - '.github/workflows/hc-migrated-contract-integrity.yml'
+  push:
+    branches:
+      - migration/highcountry-contract-source-20261122
+    paths:
+      - 'contracts/**'
+      - 'scripts/highcountry/verify-game-contract-dependencies.mjs'
+      - '.github/workflows/hc-migrated-contract-integrity.yml'
+  workflow_dispatch:
+jobs:
+  import-integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify all local Solidity imports resolve
+        run: node scripts/highcountry/verify-game-contract-dependencies.mjs
