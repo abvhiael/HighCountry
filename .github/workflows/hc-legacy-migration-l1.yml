@@ -8,7 +8,7 @@ on:
       - '.github/workflows/hc-legacy-migration-l1.yml'
   push:
     branches:
-      - migration/highcountry-legacy-source-20261122
+      - main
     paths:
       - 'apps/highcountry-web/src/**'
       - 'apps/highcountry-web/test/**'
