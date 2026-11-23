@@ -1,0 +1,34 @@
+name: HighCountry migrated art and scene contracts L1
+on:
+  pull_request:
+    paths:
+      - 'apps/highcountry-web/src/textile-catalogue.js'
+      - 'apps/highcountry-web/test/textile-catalogue.test.js'
+      - 'apps/highcountry-web/src/cultivation-scene-layout.js'
+      - 'apps/highcountry-web/test/hc-gfx-214-layout.test.mjs'
+      - 'apps/highcountry-web/src/marketplace.js'
+      - '.github/workflows/hc-migrated-art-scene-l1.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'apps/highcountry-web/src/textile-catalogue.js'
+      - 'apps/highcountry-web/test/textile-catalogue.test.js'
+      - 'apps/highcountry-web/src/cultivation-scene-layout.js'
+      - 'apps/highcountry-web/test/hc-gfx-214-layout.test.mjs'
+      - 'apps/highcountry-web/src/marketplace.js'
+      - '.github/workflows/hc-migrated-art-scene-l1.yml'
+  workflow_dispatch:
+jobs:
+  migrated-art-scene:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source syntax check
+        run: node --check apps/highcountry-web/src/marketplace.js && node --check apps/highcountry-web/src/cultivation-scene-layout.js && node --check apps/highcountry-web/src/textile-catalogue.js
+      - name: Migrated textile and scene tests
+        run: node --test apps/highcountry-web/test/textile-catalogue.test.js apps/highcountry-web/test/hc-gfx-214-layout.test.mjs
