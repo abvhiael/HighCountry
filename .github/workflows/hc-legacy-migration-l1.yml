@@ -27,6 +27,8 @@ jobs:
           node-version: '22'
       - name: Test migrated furniture and catalogues
         run: node --test apps/highcountry-web/test/hc-art-01a-catalog.test.mjs apps/highcountry-web/test/hc-art-02-furniture.test.mjs apps/highcountry-web/test/hc-art-02b-greenhouse-lounge.test.mjs apps/highcountry-web/test/hc-art-02c-outdoor-seating.test.mjs apps/highcountry-web/test/hc-art-02d-tables-desks.test.mjs
+      - name: Validate production bundle after recovered furniture modules
+        run: node apps/highcountry-web/scripts/build.mjs
   service-indexer-missions:
     runs-on: ubuntu-latest
     permissions:
