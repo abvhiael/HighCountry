@@ -18,7 +18,7 @@ test('signed mission evidence rejects forgery, wrong game, wrong objective, expi
  assert.deepEqual(await verify({...inputs,evidence:envelope()}),{sourceEvent:'verified-event-1'});
  const pemVerifier=createSignedMissionEvidence({...args,publicKey:keys.publicKey.export({format:'pem',type:'spki'})});
  assert.deepEqual(await pemVerifier({...inputs,evidence:envelope()}),{sourceEvent:'verified-event-1'});
- assert.throws(()=>createSignedMissionEvidence({...args,publicKey:keys.privateKey}),/invalid mission public key/);
+ assert.throws(()=>createSignedMissionEvidence({...args,publicKey:keys.privateKey}),/invalid mission key/);
  for(const bad of [{principal:'bob'},{chainId:421},{missionId:'other'},{amount:2},
   {objective:'self-trade'},{gameId:'0x'+'22'.repeat(32)},{issuer:'unapproved'},{expiresAt:now}]){
   assert.equal(await verify({...inputs,evidence:envelope(bad)}),false);
