@@ -1,3 +1,19 @@
+import {SUPPORT_CATALOG} from './support-catalog.js';
+import {SEATING_DESIGNS} from './seating-design-catalog.js';
+import {GREENHOUSE_LOUNGE_DESIGNS} from './greenhouse-lounge-catalog.js';
+import {OUTDOOR_SEATING_DESIGNS} from './outdoor-seating-catalog.js';
+import {TABLES_DESKS_DESIGNS} from './tables-desks-catalog.js';
+import {entertainmentCatalogue,getEntertainmentAsset} from './entertainment-catalogue.js';
+import {agriculturalBuildingCatalogue,getAgriculturalBuilding} from './agricultural-building-catalogue.js';
+import {recreationCatalogue,getRecreationAsset} from './recreation-catalogue.js';
+import {landscapeCatalogue,getLandscapeAsset} from './landscape-catalogue.js';
+import {gardenOrnamentCatalogue,getGardenOrnament} from './garden-ornament-catalogue.js';
+import {fireGatheringCatalogue,getFireGatheringFeature} from './fire-gathering-catalogue.js';
+import {smallDecorCatalogue,getSmallDecor} from './small-decor-catalogue.js';
+import {mountedDecorCatalogue,getMountedDecor} from './mounted-decor-catalogue.js';
+import {framedArtCatalogue,getFramedArt} from './framed-art-catalogue.js';
+import {signsPlaquesCatalogue,getSignPlaque} from './signs-plaques-catalogue.js';
+import {posterCatalogue,getPoster} from './poster-catalogue.js';
 import {waterWildlifeCatalogue,getWaterWildlifeFeature} from './water-wildlife-catalogue.js';
 import {outdoorStructureCatalogue,getOutdoorStructure} from './outdoor-structure-catalogue.js';
 import {redMesaLeisureCatalogue,getRedMesaLeisureBuilding} from './red-mesa-leisure-catalogue.js';
@@ -43,10 +59,86 @@ export function createMarketplaceClient({apiUrl,authenticate,fetchImpl=fetch}={}
   }
  });
 }
+export function mountTablesDesksCatalog({document,main}){
+ const section=document.createElement('section');section.setAttribute('aria-label','Tables, desks and personal workspaces catalog');
+ const heading=document.createElement('h3');heading.textContent='HC-ART-02-D · Tables, desks and personal workspaces';section.append(heading);
+ const note=document.createElement('p');note.textContent='Artwork catalog only. Purchases and resale require registered inventory and authenticated server listings. Browsing grants no items or bonuses.';section.append(note);
+ const grid=document.createElement('div');grid.className='support-art-catalog';section.append(grid);
+ for(const item of TABLES_DESKS_DESIGNS){
+  const card=document.createElement('article');card.className='support-art-card';card.setAttribute('data-asset-id',item.id);
+  const title=document.createElement('h4');title.textContent=item.name;card.append(title);
+  const img=document.createElement('img');img.src=item.sprite.src;img.alt=item.sprite.alt;img.width=128;img.height=128;img.loading='lazy';card.append(img);
+  img.addEventListener('error',()=>{img.hidden=true;});
+  const caption=document.createElement('p');caption.textContent=item.footprintTiles.columns+'×'+item.footprintTiles.rows+' tiles · '+item.environments.join(', ')+' · all regions · BUDS listing pending registration';card.append(caption);
+  grid.append(card);
+ }
+ main.append(section);
+}
+export function mountOutdoorSeatingCatalog({document,main}){
+ const section=document.createElement('section');section.setAttribute('aria-label','Outdoor seating and patio furniture catalog');
+ const heading=document.createElement('h3');heading.textContent='HC-ART-02-C · Outdoor seating and patio furniture';section.append(heading);
+ const note=document.createElement('p');note.textContent='Art catalog only. BUDS purchase or resale requires verified inventory, item registration and authenticated server settlement.';section.append(note);
+ const grid=document.createElement('div');grid.className='support-art-catalog';section.append(grid);
+ for(const item of OUTDOOR_SEATING_DESIGNS){
+  const card=document.createElement('article');card.className='support-art-card';
+  const title=document.createElement('h4');title.textContent=item.name;card.append(title);
+  const img=document.createElement('img');img.src=item.sprite.src;img.alt=item.sprite.alt;img.width=128;img.height=128;img.loading='lazy';card.append(img);
+  const caption=document.createElement('p');caption.textContent=item.footprintTiles.columns+'×'+item.footprintTiles.rows+' tiles · outdoor · BUDS listing pending registration';card.append(caption);
+  grid.append(card);
+ }
+ main.append(section);
+}
+export function mountGreenhouseLoungeCatalog({document,main}){
+ const section=document.createElement('section');section.setAttribute('aria-label','Greenhouse lounge furniture catalog');
+ const heading=document.createElement('h3');heading.textContent='HC-ART-02-B · Greenhouse lounge and botanical furniture';section.append(heading);
+ const note=document.createElement('p');note.textContent='Artwork preview only. BUDS prices, ownership and purchases require authenticated server inventory and listings.';section.append(note);
+ const grid=document.createElement('div');grid.className='support-art-catalog';section.append(grid);
+ for(const item of GREENHOUSE_LOUNGE_DESIGNS){
+  const card=document.createElement('article');card.className='support-art-card';
+  const title=document.createElement('h4');title.textContent=item.name;card.append(title);
+  const img=document.createElement('img');img.src=item.sprite.src;img.alt=item.sprite.alt;img.width=128;img.height=128;img.loading='lazy';card.append(img);
+  const caption=document.createElement('p');caption.textContent=item.footprintTiles.columns+'×'+item.footprintTiles.rows+' tiles · greenhouse · BUDS listing pending registration';card.append(caption);
+  grid.append(card);
+ }
+ main.append(section);
+}
+export function mountSeatingArtCatalog({document,main}){
+ const section=document.createElement('section');section.setAttribute('aria-label','Comfort furniture catalog');
+ const heading=document.createElement('h3');heading.textContent='HC-ART-02-A · Sofas, armchairs and casual seating';section.append(heading);
+ const note=document.createElement('p');note.textContent='Visual furniture catalog only. BUDS purchase and resale require verified inventory, instance ownership, listing and server settlement.';section.append(note);
+ const grid=document.createElement('div');grid.className='support-art-catalog';section.append(grid);
+ for(const item of SEATING_DESIGNS){
+  const card=document.createElement('article');card.className='support-art-card';
+  const title=document.createElement('h4');title.textContent=item.name;card.append(title);
+  const img=document.createElement('img');img.src=item.sprite.src;img.alt=item.sprite.alt;img.width=128;img.height=128;img.loading='lazy';card.append(img);
+  const label=document.createElement('p');label.textContent=item.footprintTiles.columns+'×'+item.footprintTiles.rows+' tiles · '+item.environments.join(', ')+' · BUDS listing pending registration';card.append(label);
+  grid.append(card);
+ }
+ main.append(section);
+}
+export function mountSupportArtCatalog({document,main}){
+ const section=document.createElement('section');section.setAttribute('aria-label','Cultivation support asset catalog');
+ const heading=document.createElement('h3');heading.textContent='HC-ART-01-A · Plant supports';section.append(heading);
+ const note=document.createElement('p');note.textContent='Artwork catalog only. BUDS prices and purchases require server-registered items and authenticated listings; browsing does not create inventory or entitlement.';section.append(note);
+ const grid=document.createElement('div');grid.className='support-art-catalog';section.append(grid);
+ for(const asset of SUPPORT_CATALOG){
+  const card=document.createElement('article');card.className='support-art-card';
+  const title=document.createElement('h4');title.textContent=asset.name;card.append(title);
+  const picture=document.createElement('img');picture.src=asset.paths.sprite;picture.alt=asset.name+' support artwork';picture.loading='lazy';picture.width=128;picture.height=128;card.append(picture);
+  const caption=document.createElement('p');caption.textContent=asset.region+' · '+asset.anchor+' anchor · '+asset.footprint.columns+'×'+asset.footprint.rows+' base tiles'+(asset.layering==='split'?' · layered':'');card.append(caption);
+  grid.append(card);
+ }
+ main.append(section);
+}
 export function mountMarketplace({document,main,runtime,authenticate,fetchImpl=fetch,operationId=()=>globalThis.crypto?.randomUUID?.().replaceAll('-','')}){
  const el=(tag,text='')=>{const e=document.createElement(tag);e.textContent=text;return e;};
  const status=el('p',runtime.mode==='connected'?'Sign in to load verified marketplace inventory.':'Marketplace unavailable offline; guest items are never spendable.');
  status.setAttribute('role','status');status.setAttribute('aria-live','polite');main.append(status);
+ mountSupportArtCatalog({document,main});
+ mountSeatingArtCatalog({document,main});
+ mountGreenhouseLoungeCatalog({document,main});
+ mountOutdoorSeatingCatalog({document,main});
+ mountTablesDesksCatalog({document,main});
  if(runtime.mode!=='connected'||typeof authenticate!=='function')return;
  const client=createMarketplaceClient({apiUrl:runtime.apiUrl,authenticate,fetchImpl});
  const region=el('section');region.setAttribute('aria-label','Marketplace');main.append(region);
@@ -123,9 +215,89 @@ export function mountMarketplace({document,main,runtime,authenticate,fetchImpl=f
    row.append(el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.placement.layer.replaceAll('_',' ')));
    decorations.append(row);
   }
+  const posters=section('Posters & underground culture');
+  posters.append(el('p','Visual catalogue only. BUDS prices, ownership and purchasing depend on authenticated server records.'));
+  for(const asset of posterCatalogue){
+   const item=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=80;img.height=128;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   item.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));
+   posters.append(item);
+  }
+  const signs=section('Signs & handcrafted plaques');
+  signs.append(el('p','Visual catalogue only. Prices and stock are determined by verified marketplace records.'));
+  for(const asset of signsPlaquesCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=128;img.height=80;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));signs.append(entry);
+  }
+  const artwork=section('Framed artwork & botanical prints');
+  artwork.append(el('p','Visual catalogue only; availability, ownership and prices are verified by the marketplace service.'));
+  for(const asset of framedArtCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));artwork.append(entry);
+  }
+  const mounted=section('Mounted decorations, clocks & mirrors');
+  mounted.append(el('p','Visual catalogue only. Prices and stock are governed by authenticated marketplace records.'));
+  for(const asset of mountedDecorCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));mounted.append(entry);
+  }
+  const decor=section('Small decorations & collectibles');
+  decor.append(el('p','Visual catalogue only. Inventory and prices require authenticated marketplace records.'));
+  for(const asset of smallDecorCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · tabletop/shelf 1×1'));decor.append(entry);
+  }
+  const fire=section('Fire pits & outdoor gathering');
+  fire.append(el('p','Visual catalogue only. Prices, stock, purchase and ownership require authenticated server records. Structure collisions and fire clearances remain unqualified.'));
+  for(const asset of fireGatheringCatalogue){
+   const entry=el('article'),img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=110;img.height=110;img.loading='lazy';img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));fire.append(entry);
+  }
+  const gardenDecor=section('Garden ornaments & yard art');
+  gardenDecor.append(el('p','Cosmetic preview only. BUDS prices and inventory must be returned by the authenticated marketplace. Placement remains restricted pending collision qualification.'));
+  for(const asset of gardenOrnamentCatalogue){
+   const entry=el('article'),img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=110;img.height=110;img.loading='lazy';img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));gardenDecor.append(entry);
+  }
+  const landscaping=section('Paths, borders & landscape details');
+  landscaping.append(el('p','Cosmetic catalogue: BUDS prices and ownership are authenticated server records. Decorative paths do not establish parcel access or road connectivity.'));
+  for(const asset of landscapeCatalogue){
+   const entry=el('article'),img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=110;img.height=110;img.loading='lazy';img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));landscaping.append(entry);
+  }
+  const recreation=section('Recreation & relaxation');
+  recreation.append(el('p','Cosmetic previews only. Pricing and ownership require authenticated server records. Interactions and clearance geometry remain unqualified.'));
+  for(const asset of recreationCatalogue){
+   const entry=el('article'),img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=110;img.height=110;img.loading='lazy';img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));recreation.append(entry);
+  }
+  const agricultural=section('Barns, agricultural buildings & homesteads');
+  agricultural.append(el('p','Visual catalogue only. Prices, BUDS purchases and ownership require authenticated server records. Placement requires independent qualified HC-PLACE collision geometry.'));
+  for(const asset of agriculturalBuildingCatalogue){
+   const entry=el('article'),img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=110;img.height=110;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));agricultural.append(entry);
+  }
+  const entertainment=section('Entertainment, recreation & relaxation');
+  entertainment.append(el('p','Decorative asset catalogue only. Purchases and prices require authenticated server-verified listings.'));
+  for(const asset of entertainmentCatalogue){
+   const item=el('article');const img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   item.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.placement.layer));
+   entertainment.append(item);
+  }
   const inventory=section('My verified inventory');
   if(!data.inventory.length)inventory.append(el('p','No tradeable registered inventory. Local guest harvests cannot be listed.'));
-  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
+  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||getPoster(item.asset)?.name||getSignPlaque(item.asset)?.name||getFramedArt(item.asset)?.name||getMountedDecor(item.asset)?.name||getSmallDecor(item.asset)?.name||getFireGatheringFeature(item.asset)?.name||getGardenOrnament(item.asset)?.name||getLandscapeAsset(item.asset)?.name||getRecreationAsset(item.asset)?.name||getAgriculturalBuilding(item.asset)?.name||getEntertainmentAsset(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
   if(data.mode==='ordinary'){
    const list=section('Create a listing');
    const asset=formField(list,'Verified asset ID');
