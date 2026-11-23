@@ -1,0 +1,25 @@
+name: Preserve HighCountry legacy game-owned contract source documents
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - migration/highcountry-contract-source-20261122
+    paths:
+      - scripts/highcountry/stage-legacy-contract-docs.mjs
+      - .github/workflows/hc-stage-game-contract-docs.yml
+jobs:
+  stage-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Copy only missing historically approved game docs with provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/highcountry/stage-legacy-contract-docs.mjs
