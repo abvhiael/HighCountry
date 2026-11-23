@@ -1,0 +1,28 @@
+name: Pin standalone HighCountry economy transitive dependency lock
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/hc-pin-economy-lock.yml
+jobs:
+  pin-lock:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: migration/highcountry-legacy-source-20261122
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Create reproducible lock from exact versioned economy dependencies
+        run: |
+          npm install --prefix services/highcountry-economy --package-lock-only --ignore-scripts --no-audit --no-fund
+          npm ci --prefix services/highcountry-economy --ignore-scripts --no-audit --no-fund
+          git add services/highcountry-economy/package-lock.json
+          if git diff --cached --quiet; then echo 'Lock already up to date'; exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Pin HighCountry economy transitive dependencies for migrated service qualification'
+          git push origin HEAD:migration/highcountry-legacy-source-20261122
