@@ -19,12 +19,12 @@ test('registered HTTP mission lifecycle rejects owner override and cannot mint B
   return {status:response.status,body:await response.json()};
  };
  assert.equal((await post('/missions/snapshot',{},'stranger')).status,403);
- assert.equal((await post('/missions/activate',{operation:'start',missionId:'journal-first-steps',owner:'victim'})).status,403);
- assert.equal((await post('/missions/activate',{operation:'start',missionId:'journal-first-steps'})).status,200);
- assert.equal((await post('/missions/progress',{operation:'one',missionId:'journal-first-steps',amount:1,evidence:'verified:1'})).status,200);
- assert.equal((await post('/missions/progress',{operation:'two',missionId:'journal-first-steps',amount:1,evidence:'verified:2'})).status,200);
- const claim=await post('/missions/claim',{operation:'claim',missionId:'journal-first-steps'});
+ assert.equal((await post('/missions/activate',{operation:'start',id:'journal-first-steps',owner:'victim'})).status,403);
+ assert.equal((await post('/missions/activate',{operation:'start',id:'journal-first-steps'})).status,200);
+ assert.equal((await post('/missions/progress',{operation:'one',id:'journal-first-steps',amount:1,evidence:'verified:1'})).status,200);
+ assert.equal((await post('/missions/progress',{operation:'two',id:'journal-first-steps',amount:1,evidence:'verified:2'})).status,200);
+ const claim=await post('/missions/claim',{operation:'claim',id:'journal-first-steps'});
  assert.equal(claim.status,200);assert.equal(claim.body.result.reward.kind,'cosmetic-badge');
- assert.equal((await post('/missions/claim',{operation:'claim-again',missionId:'journal-first-steps'})).status,403);
+ assert.equal((await post('/missions/claim',{operation:'claim-again',id:'journal-first-steps'})).status,403);
  assert.equal(store.state.issued,0);assert.equal(store.state.burned,0);assert.equal(store.state.assets.size,0);
 });
