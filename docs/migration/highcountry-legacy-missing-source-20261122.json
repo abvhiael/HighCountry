@@ -1,0 +1,229 @@
+{
+  "sourceRepo": "abvhiael/420-integrated-v0.1",
+  "destination": "abvhiael/HighCountry",
+  "mode": "missing-only; existing files never overwritten",
+  "pullRequests": {
+    "796": {
+      "changedFiles": 11,
+      "eligibleMissing": [
+        "docs/highcountry/HC-NEXT-4.1-AUTHENTICATED-BUDS.md"
+      ]
+    },
+    "803": {
+      "changedFiles": 12,
+      "eligibleMissing": [
+        "docs/highcountry/HC-NEXT-4.3-CANONICAL-MARKETPLACE.md",
+        "services/highcountry-economy/src/canonical-http-indexer.js",
+        "services/highcountry-economy/src/canonical-indexer-reconciler.js",
+        "services/highcountry-economy/test/canonical-http-indexer.test.js",
+        "services/highcountry-economy/test/canonical-indexer-reconciler.test.js",
+        "services/highcountry-economy/test/deployed-canonical-acceptance.mjs"
+      ]
+    },
+    "811": {
+      "changedFiles": 20,
+      "eligibleMissing": [
+        "apps/highcountry-web/test/hc-next-5-2-missions.test.mjs",
+        "docs/highcountry/HC-NEXT-5.2-MISSIONS.md",
+        "services/highcountry-economy/test/missions-http.test.js",
+        "services/highcountry-economy/test/signed-mission-evidence.test.js"
+      ]
+    },
+    "833": {
+      "changedFiles": 7,
+      "eligibleMissing": []
+    },
+    "839": {
+      "changedFiles": 30,
+      "eligibleMissing": [
+        "apps/highcountry-web/src/furniture-rules.js",
+        "apps/highcountry-web/src/greenhouse-lounge-catalog.js",
+        "apps/highcountry-web/src/outdoor-seating-catalog.js",
+        "apps/highcountry-web/src/seating-design-catalog.js",
+        "apps/highcountry-web/src/support-catalog.js",
+        "apps/highcountry-web/src/tables-desks-catalog.js",
+        "apps/highcountry-web/test/hc-art-01a-catalog.test.mjs",
+        "apps/highcountry-web/test/hc-art-02-furniture.test.mjs",
+        "apps/highcountry-web/test/hc-art-02b-greenhouse-lounge.test.mjs",
+        "apps/highcountry-web/test/hc-art-02c-outdoor-seating.test.mjs",
+        "apps/highcountry-web/test/hc-art-02d-tables-desks.test.mjs",
+        "docs/highcountry/HC-ART-02-D-TABLES-DESKS.md",
+        "docs/highcountry/art/HC-ART-02/COMFORT-FURNITURE-DESIGN-V1.md",
+        "docs/highcountry/art/HC-ART-02/GREENHOUSE-LOUNGE-ASSETS-V1.md",
+        "docs/highcountry/art/HC-ART-02/OUTDOOR-SEATING-ASSETS-V1.md"
+      ]
+    },
+    "872": {
+      "changedFiles": 5,
+      "eligibleMissing": []
+    },
+    "877": {
+      "changedFiles": 5,
+      "eligibleMissing": []
+    },
+    "879": {
+      "changedFiles": 5,
+      "eligibleMissing": []
+    },
+    "881": {
+      "changedFiles": 5,
+      "eligibleMissing": []
+    },
+    "891": {
+      "changedFiles": 12,
+      "eligibleMissing": []
+    },
+    "896": {
+      "changedFiles": 8,
+      "eligibleMissing": []
+    },
+    "900": {
+      "changedFiles": 5,
+      "eligibleMissing": []
+    },
+    "913": {
+      "changedFiles": 8,
+      "eligibleMissing": []
+    },
+    "917": {
+      "changedFiles": 3,
+      "eligibleMissing": []
+    },
+    "928": {
+      "changedFiles": 11,
+      "eligibleMissing": []
+    }
+  },
+  "newFiles": [
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/src/furniture-rules.js",
+      "gitBlobSha": "480d375580156721cba9c70eb8bd697ecfb9dc21"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/src/greenhouse-lounge-catalog.js",
+      "gitBlobSha": "485e4557b332f230478d98ee19ec301ac03513e1"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/src/outdoor-seating-catalog.js",
+      "gitBlobSha": "c382e46da5ad93f804cf23a2740bf87e30531c08"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/src/seating-design-catalog.js",
+      "gitBlobSha": "dcd8cbea07851b23aae4f1495073a0fd1dd8fcfa"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/src/support-catalog.js",
+      "gitBlobSha": "128e90d8dac92e2a3778947d9b994573c5c27c7f"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/src/tables-desks-catalog.js",
+      "gitBlobSha": "dd080188d6eaf50b55f3fcaf3b2c22dcd32bbf7d"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/test/hc-art-01a-catalog.test.mjs",
+      "gitBlobSha": "d8fd4b2db866ac76c7707212d68f86e694fc21b4"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/test/hc-art-02-furniture.test.mjs",
+      "gitBlobSha": "28aba5cf34476f1c2828a5f3de2bddcaefd9ce72"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/test/hc-art-02b-greenhouse-lounge.test.mjs",
+      "gitBlobSha": "37ac1eaa394a1036ff2c5a7c83cef7156991b74e"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/test/hc-art-02c-outdoor-seating.test.mjs",
+      "gitBlobSha": "4a9e5edc23e55a5c017a804dfce892ef264e7ad0"
+    },
+    {
+      "pr": 839,
+      "path": "apps/highcountry-web/test/hc-art-02d-tables-desks.test.mjs",
+      "gitBlobSha": "278fb42891abe9e2de62be413aeb128f1533c845"
+    },
+    {
+      "pr": 839,
+      "path": "docs/highcountry/HC-ART-02-D-TABLES-DESKS.md",
+      "gitBlobSha": "d3a1343facecefb7967066bf5ac08e3a8446d127"
+    },
+    {
+      "pr": 839,
+      "path": "docs/highcountry/art/HC-ART-02/COMFORT-FURNITURE-DESIGN-V1.md",
+      "gitBlobSha": "bbeace5753c47317a2a902c33dfb0fa1ba94305e"
+    },
+    {
+      "pr": 839,
+      "path": "docs/highcountry/art/HC-ART-02/GREENHOUSE-LOUNGE-ASSETS-V1.md",
+      "gitBlobSha": "eeb75c4d0a33440b4dd7270067c5c81511adcfb3"
+    },
+    {
+      "pr": 839,
+      "path": "docs/highcountry/art/HC-ART-02/OUTDOOR-SEATING-ASSETS-V1.md",
+      "gitBlobSha": "2ef04057d5f767112a42204a1cf9e47874f6578a"
+    },
+    {
+      "pr": 811,
+      "path": "apps/highcountry-web/test/hc-next-5-2-missions.test.mjs",
+      "gitBlobSha": "41d3ede47b2adc951d9c2c628ac4092d8f779714"
+    },
+    {
+      "pr": 811,
+      "path": "docs/highcountry/HC-NEXT-5.2-MISSIONS.md",
+      "gitBlobSha": "74e5df2e4881e9700a6aeeb44c9659f6bb607033"
+    },
+    {
+      "pr": 811,
+      "path": "services/highcountry-economy/test/missions-http.test.js",
+      "gitBlobSha": "013539ca39e4a13f3e9f4bbae79a626b04ff92e8"
+    },
+    {
+      "pr": 811,
+      "path": "services/highcountry-economy/test/signed-mission-evidence.test.js",
+      "gitBlobSha": "c2eeb338c9d4a5b3f682cb2718c835e84bf32c1a"
+    },
+    {
+      "pr": 803,
+      "path": "docs/highcountry/HC-NEXT-4.3-CANONICAL-MARKETPLACE.md",
+      "gitBlobSha": "f6953b8380f68a32f840e9376044536e1eedde2e"
+    },
+    {
+      "pr": 803,
+      "path": "services/highcountry-economy/src/canonical-http-indexer.js",
+      "gitBlobSha": "a975170e8df69d79956c1f51de3d53d30a7da78d"
+    },
+    {
+      "pr": 803,
+      "path": "services/highcountry-economy/src/canonical-indexer-reconciler.js",
+      "gitBlobSha": "3448663ab451b290aa6d9ccbe2f2410b13461d22"
+    },
+    {
+      "pr": 803,
+      "path": "services/highcountry-economy/test/canonical-http-indexer.test.js",
+      "gitBlobSha": "dda915e578b72901b487eb4518fbbb69864ab7a1"
+    },
+    {
+      "pr": 803,
+      "path": "services/highcountry-economy/test/canonical-indexer-reconciler.test.js",
+      "gitBlobSha": "a1ed47200a3d55f2e8d883609edc97737c67809e"
+    },
+    {
+      "pr": 803,
+      "path": "services/highcountry-economy/test/deployed-canonical-acceptance.mjs",
+      "gitBlobSha": "818aadf3e273e4ad75a7f18580accd91fbc029d6"
+    },
+    {
+      "pr": 796,
+      "path": "docs/highcountry/HC-NEXT-4.1-AUTHENTICATED-BUDS.md",
+      "gitBlobSha": "0541d06c3e128dc387890a03c5011a68e11ee2a0"
+    }
+  ]
+}
