@@ -7,6 +7,10 @@ on:
       - 'apps/highcountry-web/src/cultivation-scene-layout.js'
       - 'apps/highcountry-web/test/hc-gfx-214-layout.test.mjs'
       - 'apps/highcountry-web/src/marketplace.js'
+      - 'apps/highcountry-web/src/app.js'
+      - 'apps/highcountry-web/public/styles.css'
+      - 'apps/highcountry-web/scripts/build.mjs'
+      - 'apps/highcountry-web/test/hc-next-4-4-marketplace.test.mjs'
       - '.github/workflows/hc-migrated-art-scene-l1.yml'
   push:
     branches: [main]
@@ -16,6 +20,10 @@ on:
       - 'apps/highcountry-web/src/cultivation-scene-layout.js'
       - 'apps/highcountry-web/test/hc-gfx-214-layout.test.mjs'
       - 'apps/highcountry-web/src/marketplace.js'
+      - 'apps/highcountry-web/src/app.js'
+      - 'apps/highcountry-web/public/styles.css'
+      - 'apps/highcountry-web/scripts/build.mjs'
+      - 'apps/highcountry-web/test/hc-next-4-4-marketplace.test.mjs'
       - '.github/workflows/hc-migrated-art-scene-l1.yml'
   workflow_dispatch:
 jobs:
