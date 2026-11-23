@@ -44,7 +44,9 @@ test('offline marketplace renders disclosure without service requests or wallet 
  const doc={createElement:tag=>new Element(tag)},main=new Element('main');
  mountMarketplace({document:doc,main,runtime:{mode:'offline'}});
  assert.match(main.children[0].textContent,/unavailable offline/);
- assert.equal(main.children.length,1);
+ // Read-only guest artwork previews remain public; authenticated inventory and settlement do not.
+ assert.equal(main.children.length,6);
+ assert.ok(main.children.slice(1).every(section=>section.children.every(child=>child.tagName!=='button')));
 });
 test('ordinary marketplace renders real browse, listing and history without wallet provider',async()=>{
  const doc={createElement:tag=>new Element(tag)},main=new Element('main');
@@ -58,7 +60,8 @@ test('ordinary marketplace renders real browse, listing and history without wall
   authenticate:async()=> 'session',fetchImpl:async()=>{fetched++;return {ok:true,json:async()=>({ok:true,result:snapshot})};}});
  await new Promise(resolve=>setImmediate(resolve));
  assert.equal(fetched,1);
- const region=main.children[1];
+ const region=main.children.find(x=>x.attributes?.['aria-label']==='Marketplace');
+ assert.ok(region);
  assert.ok(region.children.length>4);
  assert.match(main.children[0].textContent,/Server-verified marketplace/);
  assert.ok(region.children.some(x=>x.children?.some(y=>y.textContent==='Create a listing')));
