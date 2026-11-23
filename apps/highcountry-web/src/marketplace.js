@@ -3,6 +3,7 @@ import {outdoorStructureCatalogue,getOutdoorStructure} from './outdoor-structure
 import {redMesaLeisureCatalogue,getRedMesaLeisureBuilding} from './red-mesa-leisure-catalogue.js';
 import {regionalMemorabiliaCatalogue,getRegionalMemorabilia} from './regional-memorabilia-catalogue.js';
 import {premiumFurnitureCatalogue,getPremiumFurniture} from './premium-furniture-catalogue.js';
+import {getTextileAsset,textileCatalogue} from './textile-catalogue.js';
 // HC-NEXT-4.4 player experience. All balances, ownership and settlement states are server-derived.
 const opaque=x=>typeof x==='string'&&/^[A-Za-z0-9:_-]{1,128}$/.test(x);
 const pos=x=>Number.isSafeInteger(x)&&x>0;
@@ -113,6 +114,14 @@ export function mountMarketplace({document,main,runtime,authenticate,fetchImpl=f
   for(const asset of waterWildlifeCatalogue){
    const entry=el('article'),img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=110;img.height=110;img.loading='lazy';img.addEventListener('error',()=>{img.hidden=true;});
    entry.append(img,el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.originRegion));waterWildlife.append(entry);
+  }
+  const decorations=section('Decorative furnishings · HC-ART-02-E');
+  decorations.append(el('p','Artwork catalogue only. BUDS prices, ownership and purchase eligibility require authenticated marketplace records.'));
+  for(const asset of textileCatalogue){
+   const row=el('article');
+   const img=document.createElement('img');img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';row.append(img);
+   row.append(el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.placement.layer.replaceAll('_',' ')));
+   decorations.append(row);
   }
   const inventory=section('My verified inventory');
   if(!data.inventory.length)inventory.append(el('p','No tradeable registered inventory. Local guest harvests cannot be listed.'));
