@@ -1,3 +1,8 @@
+import {smallDecorCatalogue,getSmallDecor} from './small-decor-catalogue.js';
+import {mountedDecorCatalogue,getMountedDecor} from './mounted-decor-catalogue.js';
+import {framedArtCatalogue,getFramedArt} from './framed-art-catalogue.js';
+import {signsPlaquesCatalogue,getSignPlaque} from './signs-plaques-catalogue.js';
+import {posterCatalogue,getPoster} from './poster-catalogue.js';
 import {waterWildlifeCatalogue,getWaterWildlifeFeature} from './water-wildlife-catalogue.js';
 import {outdoorStructureCatalogue,getOutdoorStructure} from './outdoor-structure-catalogue.js';
 import {redMesaLeisureCatalogue,getRedMesaLeisureBuilding} from './red-mesa-leisure-catalogue.js';
@@ -123,9 +128,50 @@ export function mountMarketplace({document,main,runtime,authenticate,fetchImpl=f
    row.append(el('p',asset.name+' · '+asset.footprint.width+'×'+asset.footprint.height+' · '+asset.placement.layer.replaceAll('_',' ')));
    decorations.append(row);
   }
+  const posters=section('Posters & underground culture');
+  posters.append(el('p','Visual catalogue only. BUDS prices, ownership and purchasing depend on authenticated server records.'));
+  for(const asset of posterCatalogue){
+   const item=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=80;img.height=128;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   item.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));
+   posters.append(item);
+  }
+  const signs=section('Signs & handcrafted plaques');
+  signs.append(el('p','Visual catalogue only. Prices and stock are determined by verified marketplace records.'));
+  for(const asset of signsPlaquesCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=128;img.height=80;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));signs.append(entry);
+  }
+  const artwork=section('Framed artwork & botanical prints');
+  artwork.append(el('p','Visual catalogue only; availability, ownership and prices are verified by the marketplace service.'));
+  for(const asset of framedArtCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));artwork.append(entry);
+  }
+  const mounted=section('Mounted decorations, clocks & mirrors');
+  mounted.append(el('p','Visual catalogue only. Prices and stock are governed by authenticated marketplace records.'));
+  for(const asset of mountedDecorCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · wall '+asset.footprint.width+'×'+asset.footprint.height));mounted.append(entry);
+  }
+  const decor=section('Small decorations & collectibles');
+  decor.append(el('p','Visual catalogue only. Inventory and prices require authenticated marketplace records.'));
+  for(const asset of smallDecorCatalogue){
+   const entry=el('article'),img=document.createElement('img');
+   img.src=asset.assetUrl;img.alt=asset.name;img.width=96;img.height=96;img.loading='lazy';
+   img.addEventListener('error',()=>{img.hidden=true;});
+   entry.append(img,el('p',asset.name+' · tabletop/shelf 1×1'));decor.append(entry);
+  }
   const inventory=section('My verified inventory');
   if(!data.inventory.length)inventory.append(el('p','No tradeable registered inventory. Local guest harvests cannot be listed.'));
-  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
+  for(const item of data.inventory)inventory.append(el('p',(getWaterWildlifeFeature(item.asset)?.name||getOutdoorStructure(item.asset)?.name||getRedMesaLeisureBuilding(item.asset)?.name||getPremiumFurniture(item.asset)?.name||getRegionalMemorabilia(item.asset)?.name||getTextileAsset(item.asset)?.name||getPoster(item.asset)?.name||getSignPlaque(item.asset)?.name||getFramedArt(item.asset)?.name||getMountedDecor(item.asset)?.name||getSmallDecor(item.asset)?.name||item.asset)+' · available '+item.available+' · reserved '+item.reserved));
   if(data.mode==='ordinary'){
    const list=section('Create a listing');
    const asset=formField(list,'Verified asset ID');
